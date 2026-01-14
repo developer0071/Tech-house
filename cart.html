@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech House - Shopping Cart</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <base href="https://developer0071.github.io/Tech-house/">
+
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="sidebar" id="sidebar">
+        <button class="sidebar-close" id="closeMenu">
+            <i data-lucide="x" size="32"></i>
+        </button>
+        <a href="home page.html"><i data-lucide="home"></i><span>Home</span></a>
+        <a href=""><i data-lucide="info"></i><span>About</span></a>
+        <a href="all products.html"><i data-lucide="box"></i><span>Products</span></a>
+        <a href="location.html"><i data-lucide="map-pin"></i><span>Locations</span></a>
+        <a href="contact us.html" ><i data-lucide="phone"></i><span>Contact</span></a>
+        <a href="membership.html">
+            <i data-lucide="zap" size="16" fill="white"></i> 
+            <span>Membership</span>
+        </a>
+        <a href="index.html" class="btn-sign-out mobile">
+            <i data-lucide="log-out" size="18"></i> 
+            <span>Sign out</span>
+        </a>
+    </div>
+    <header>
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <div class="dot"></div>
+                <p>
+                    Free delivery on orders over £50 | Student discount available
+                </p>
+            </div>
+            <div class="top-bar-right">
+
+                <a href="index.html" class="btn-sign-out desktop">
+                    <i data-lucide="log-out" size="18"></i> 
+                    <span>Sign out</span>
+                </a>
+            </div>
+        </div>
+
+        <nav class="nav-main">
+            <div class="logo-section">
+                <img style="cursor: pointer;" onclick="location.href='home page.html'" src="elements/icon.png" alt="icon" class="icon-box">
+                <div style="cursor: pointer;" onclick="location.href='home page.html'" class="logo-text">
+                    <h1>Tech House</h1>
+                    <p>PREMIUM APPLIANCES</p>
+                </div>
+            </div>
+
+            <div class="search-container">
+                <input type="text" id="product-search" placeholder="Search for products...">
+                
+                <button class="search-btn" onclick="updateSearch()">
+                    <i data-lucide="search" size="18"></i>
+                </button>
+            </div>
+            <div class="user-actions">
+
+                <div  onclick="location.href='cart.html'" class="action-item cart">
+                    <i data-lucide="shopping-cart"></i>
+                    Cart
+                </div>
+
+                <button class="mobile-hamburger" id="openMenu">
+                    <i data-lucide="menu" size="28"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div class="nav-bottom">
+            <a class="nav-a"  href="home page.html"><i data-lucide="home"></i><span>Home</span></a>
+            <div class="nav-dropdown-wrapper">
+                <a class="nav-a" href="">
+                    <i data-lucide="info"></i>
+                    <span>About</span>
+                    <i data-lucide="chevron-down" style="width: 14px; margin-left: 4px;"></i>
+                </a>
+
+                <div class="grid-about-hover">
+                    <div class="menu-column">
+                        <h4>Discover Tech House</h4>
+                        <a href="about us.html">Our Story</a>
+                        <a href="location.html">Store Locations</a>
+                    </div>
+                    <div class="menu-visuals">
+                        <div onclick="location.href='location.html'" class="visual-item">
+                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=400&q=80" alt="Store">
+                            <span>Visit our Showroom</span>
+                        </div>
+                        <div onclick="location.href='all products.html'" class="visual-item">
+                            <img src="https://avatars.mds.yandex.net/i?id=82863daf30cd0c1dace6ae5acb029794f3cffc8f4b14c742-4935642-images-thumbs&n=13" alt="Technology">
+                            <span>Latest Tech</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="nav-a" href="all products.html"><i data-lucide="box"></i><span>Products</span></a>
+            <a class="nav-a" href="contact us.html" ><i data-lucide="phone" ></i><span>Contact</span></a>
+            <a href="membership.html" class="membership-pill">
+                <i data-lucide="zap" size="16" fill="#fbbf24"></i> 
+                <span>Membership</span>
+            </a>
+        </div>
+
+    </header>
+    
+    <main class="cart-main-grid">
+        <section class="cart-section">
+            <div class="checkout-form-container">
+                <h3 style="margin-top:0; color: #111827;">Contact Information</h3>
+                <div style="display: grid; gap: 15px;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <input type="text" id="cust-fname" placeholder="First name">
+                        <input type="text" id="cust-lname" placeholder="Last name">
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <input type="email" id="cust-email" placeholder="Email address">
+                        <input type="tel" id="cust-phone" placeholder="Phone number">
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkout-form-container">
+                <h3 style="margin-top:0; color: #111827;">Delivery Method</h3>
+                <div style="display: grid; gap: 12px;">
+                    <label class="method-label" style="border-color: #fbbf24; background: #fffbeb;">
+                        <input type="radio" name="delivery-type" value="standard" checked style="margin-right: 12px;">
+                        <div style="flex: 1;">
+                            <strong style="color: #111827;">Standard delivery (5-6 days)</strong>
+                            <span style="float: right; font-weight: 700; color: #111827;">FREE</span>
+                        </div>
+                    </label>
+                    <label class="method-label">
+                        <input type="radio" name="delivery-type" value="express" style="margin-right: 12px;">
+                        <div style="flex: 1;">
+                            <strong style="color: #111827;">Express delivery (1-2 days)</strong>
+                            <span style="float: right; font-weight: 700; color: #111827;">£10</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+            <div class="checkout-form-container">
+                <h3 style="margin-top:0; color: #111827;">Payment Method</h3>
+                <div style="display: grid; gap: 12px;">
+                    <label class="method-label" style="border-color: #fbbf24; background: #fffbeb;">
+                        <input type="radio" name="payment-method" value="visa" checked style="margin-right: 12px;">
+                        <strong style="color: #111827;">Visa</strong>
+                        <span style="margin-left: auto; font-size: 20px;">💳</span>
+                    </label>
+                    <div style="display: grid; gap: 15px; margin-top: 10px;">
+                        <input type="text" placeholder="Card number">
+                        <input type="text" placeholder="Cardholder full name">
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <input type="text" placeholder="Expiry date (MM/YY)">
+                        <input type="text" placeholder="CVV">
+                    </div>
+                    
+                    <label class="method-label">
+                        <input type="radio" name="payment-method" value="mastercard" style="margin-right: 12px;">
+                        <strong style="color: #111827;">Mastercard</strong>
+                        <span style="margin-left: auto; font-size: 20px;">💳</span>
+                    </label>
+                    
+                    <label class="method-label">
+                        <input type="radio" name="payment-method" value="googlepay" style="margin-right: 12px;">
+                        <strong style="color: #111827;">Google Pay</strong>
+                        <span style="margin-left: auto; font-size: 20px;">🅖</span>
+                    </label>
+                    
+                    <label class="method-label">
+                        <input type="radio" name="payment-method" value="paypal" style="margin-right: 12px;">
+                        <strong style="color: #111827;">PayPal</strong>
+                        <span style="margin-left: auto; font-size: 20px;">🅿</span>
+                    </label>
+                </div>
+                <p style="font-size: 12px; color: #6b7280; margin-top: 12px;">
+                    <a href="#" style="color: #3b82f6; text-decoration: none;">Log in</a> to save card information for next orders
+                </p>
+            </div>
+        </section>
+
+        <aside class="summary-card">
+            <h3 style="margin-top:0; color: #111827;">Order Summary</h3>
+            <div id="cart-items-summary" style="margin-bottom: 25px; max-height: 400px; overflow-y: auto;">
+                </div>
+            <div class="summary-row" style="display: flex; justify-content: space-between; margin-bottom: 12px; color: #4b5563;">
+                <span>Subtotal</span>
+                <span id="subtotal-amount">£0.00</span>
+            </div>
+            <div class="summary-row" style="display: flex; justify-content: space-between; margin-bottom: 12px; color: #4b5563;">
+                <span>Delivery cost</span>
+                <span id="delivery-amount" style="color: #10b981; font-weight: 600;">FREE</span>
+            </div>
+            <div class="summary-row" style="display: flex; justify-content: space-between; margin-bottom: 25px; color: #4b5563;">
+                <span>Discount</span>
+                <span id="discount-amount">-£3.00</span>
+            </div>
+            <div class="summary-row total" style="display: flex; justify-content: space-between; border-top: 2px solid #f3f4f6; padding-top: 20px;">
+                <span style="font-size: 22px; font-weight: 700; color: #111827;">Total to pay</span>
+                <span id="total-amount" style="font-size: 22px; font-weight: 700; color: #111827;">£0.00</span>
+            </div>
+            <button class="checkout-btn">Pay Now</button>
+            <p style="text-align:center; font-size:11px; color:#9ca3af; margin-top:15px; display: flex; align-items: center; justify-content: center; gap: 5px;">
+                <input type="checkbox" id="terms-check" style="margin: 0;">
+                By proceeding I accept the <a href="#" style="color: #a0866a; text-decoration: underline;">Terms & Conditions</a>
+            </p>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-el">
+                <div class="footer-logo">
+                    <img src="elements/icon.png" alt="icon" class="icon-box">
+                    <h2>Tech House</h2>
+                </div>
+                <p>Your trusted partner for quality home appliances since 2010. Excellence in every product.</p>
+                <div class="social-links">
+                    <a href="#"><i data-lucide="facebook" size="18"></i></a>
+                    <a href="#"><i data-lucide="twitter" size="18"></i></a>
+                    <a href="#"><i data-lucide="instagram" size="18"></i></a>
+                    <a href="#"><i data-lucide="linkedin" size="18"></i></a>
+                </div>
+            </div>
+            <div class="footer-holder">
+                <div class="footer-el">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="all products.html">Shop All Products</a></li>
+                        <li><a href="membership.html">Membership Program</a></li>
+                        <li><a href="contact us.html">Store Locations</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-el">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact us.html">Delivery Information</a></li>
+                        <li><a href="contact us.html">Returns & Refunds</a></li>
+                        <li><a href="membership.html">FAQ & Support</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-el">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <i data-lucide="phone" size="18"></i>
+                        <div>
+                            <strong>Call Us</strong>
+                            <p>+998 90 855 75 85</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="mail" size="18"></i>
+                        <div>
+                            <strong>Email Us</strong>
+                            <p>kyuter789@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="map-pin" size="18"></i>
+                        <div>
+                            <strong>Visit Us</strong>
+                            <p>Uzbekistan , Tashkent , Sergeli</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Tech House. All rights reserved. Built with excellence.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="cart.js"></script>
+    <script src="search.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

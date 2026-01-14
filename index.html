@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech House - Premium Appliances</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <base href="https://developer0071.github.io/Tech-house/">
+    <link rel="stylesheet" href="css files/style.css">
+    <style>
+        #loginBtn {
+            color: blue; 
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        #loginBtn:hover {
+            color: red;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="home page.html" method="get" class="reg-card registration-form" style="margin: 40px auto; max-width: 400px; padding: 20px; border: 1px solid #ccc; border-radius: 8px;">
+        <div class="reg-header">
+            <div class="box-icon">
+                <img src="elements/icon.png" alt="">
+            </div>
+            <h2 id="form-title">Create Account</h2>
+            <p id="form-desc">Join Tech House for exclusive member perks</p>
+        </div>
+
+        <div class="form-group" id="name-group">
+            <label for="full-name">Full Name</label>
+            <div class="input-wrapper">
+                <i data-lucide="user" class="input-icon"></i>
+                <input type="text" id="full-name" name="fullName" placeholder="John Doe">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <div class="input-wrapper">
+                <i data-lucide="mail" class="input-icon"></i>
+                <input type="email" id="email" name="email" placeholder="name@example.com" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <div class="input-wrapper">
+                <i data-lucide="lock" class="input-icon"></i>
+                <input type="password" id="password" name="password" placeholder="••••••••" minlength="8" required>
+            </div>
+        </div>
+
+        <p style="margin-top: 10px;">
+            <span id="toggle-text">Already have an account?</span> 
+            <span id="loginBtn">Login</span>
+        </p>
+        
+        <button type="submit" id="submit-btn" class="reg-btn" style="width: 100%; padding: 10px; margin-top: 15px;">Sign Up</button>
+    </form>
+
+    <script src="reg.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

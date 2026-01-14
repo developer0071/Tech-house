@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="https://developer0071.github.io/Tech-house/">
+    <title>Tech House - Premium Appliances</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <base href="https://developer0071.github.io/Tech-house/">
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="sidebar" id="sidebar">
+        <button class="sidebar-close" id="closeMenu">
+            <i data-lucide="x" size="32"></i>
+        </button>
+        <a href="home page.html"><i data-lucide="home"></i><span>Home</span></a>
+        <a href=""><i data-lucide="info"></i><span>About</span></a>
+        <a href="all products.html" id="nav-active-page"><i data-lucide="box"></i><span>Products</span></a>
+        <a href="location.html"><i data-lucide="map-pin"></i><span>Locations</span></a>
+        <a href="contact us.html"><i data-lucide="phone"></i><span>Contact</span></a>
+        <a href="membership.html">
+            <i data-lucide="zap" size="16" fill="white"></i> 
+            <span>Membership</span>
+        </a>
+        <a href="index.html"class="btn-sign-out mobile">
+            <i data-lucide="log-out" size="18"></i> 
+            <span>Sign out</span>
+        </a>
+    </div>
+    <header>
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <div class="dot"></div>
+                <p>
+                    Free delivery on orders over £50 | Student discount available
+                </p>
+            </div>
+            <div class="top-bar-right">
+
+                <a href="index.html" class="btn-sign-out desktop">
+                    <i data-lucide="log-out" size="18"></i> 
+                    <span>Sign out</span>
+                </a>
+            </div>
+        </div>
+
+        <nav class="nav-main">
+            <div class="logo-section">
+                <img style="cursor: pointer;" onclick="location.href='home page.html'" src="elements/icon.png" alt="icon" class="icon-box">
+                <div style="cursor: pointer;" onclick="location.href='home page.html'" class="logo-text">
+                    <h1>Tech House</h1>
+                    <p>PREMIUM APPLIANCES</p>
+                </div>
+            </div>
+
+            <div class="search-container">
+                <input type="text" id="product-search" placeholder="Search for products...">
+                
+                <button class="search-btn" onclick="updateSearch()">
+                    <i data-lucide="search" size="18"></i>
+                </button>
+            </div>
+
+            <div class="user-actions">
+
+                <div  onclick="location.href='cart.html'" class="action-item cart">
+                    <i data-lucide="shopping-cart"></i>
+                    Cart
+                </div>
+
+                <button class="mobile-hamburger" id="openMenu">
+                    <i data-lucide="menu" size="28"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div class="nav-bottom">
+            <a class="nav-a"  href="home page.html"><i data-lucide="home"></i><span>Home</span></a>
+            <div class="nav-dropdown-wrapper">
+                <a class="nav-a" href="">
+                    <i data-lucide="info"></i>
+                    <span>About</span>
+                    <i data-lucide="chevron-down" style="width: 14px; margin-left: 4px;"></i>
+                </a>
+
+                <div class="grid-about-hover">
+                    <div class="menu-column">
+                        <h4>Discover Tech House</h4>
+                        <a href="about us.html">Our Story</a>
+                        <a href="location.html">Store Locations</a>
+                    </div>
+                    <div class="menu-visuals">
+                        <div onclick="location.href='location.html'" class="visual-item">
+                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=400&q=80" alt="Store">
+                            <span>Visit our Showroom</span>
+                        </div>
+                        <div onclick="location.href='all products.html'" class="visual-item">
+                            <img src="https://avatars.mds.yandex.net/i?id=82863daf30cd0c1dace6ae5acb029794f3cffc8f4b14c742-4935642-images-thumbs&n=13" alt="Technology">
+                            <span>Latest Tech</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="nav-a" href="all products.html"><i data-lucide="box"></i><span>Products</span></a>
+            <a class="nav-a" href="contact us.html"><i data-lucide="phone" ></i><span>Contact</span></a>
+            <a href="membership.html" class="membership-pill">
+                <i data-lucide="zap" size="16" fill="#fbbf24"></i> 
+                <span>Membership</span>
+            </a>
+        </div>
+
+    </header>
+    
+
+    <main class="hero">
+        <h2>Our-Locartions</h2>
+    </main>
+    <section class="locations-market">
+        <h1 style="color: #0f172a; text-align: center;">Our Showrooms</h1>
+        <p style="color: #6b7280; text-align: center; margin-bottom: 40px;">Visit us for a hands-on experience with premium technology</p>
+        
+        <div class="market-grid">
+            <div class="market-card">
+                <div class="market-image">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80" alt="Tashkent Store">
+                </div>
+                <div class="market-info">
+                    <h3>Tashkent Central</h3>
+                    <p><i data-lucide="map-pin" size="14"></i> Sergeli District, Uzbekistan</p>
+                    <p><i data-lucide="clock" size="14"></i> 09:00 AM - 10:00 PM</p>
+                    <button onclick="location.href='https://www.google.com/maps/place/Tashkent,+Uzbekistan/@41.2826434,68.9497315,10z/data=!3m1!4b1!4m6!3m5!1s0x38ae8b0cc379e9c3:0xa5a9323b4aa5cb98!8m2!3d41.2982211!4d69.2385223!16zL20vMGZzbXk?entry=ttu&g_ep=EgoyMDI2MDEwNi4wIKXMDSoASAFQAw%3D%3D'" class="view-btn">View Map</button>
+                </div>
+            </div>
+
+            <div class="market-card">
+                <div class="market-image">
+                    <img src="https://avatars.mds.yandex.net/i?id=16c57a0ee0bbdd26642e291f29a383dd239c01c8-12422267-images-thumbs&n=13" alt="London Store">
+                </div>
+                <div class="market-info">
+                    <h3>London Flagship</h3>
+                    <p><i data-lucide="map-pin" size="14"></i> 221B Baker St, London</p>
+                    <p><i data-lucide="clock" size="14"></i> 10:00 AM - 08:00 PM</p>
+                    <button onclick="location.href='https://www.google.com/maps/place/London,+UK/@51.5267933,-0.7610306,9z/data=!3m1!4b1!4m6!3m5!1s0x47d8a00baf21de75:0x52963a5addd52a99!8m2!3d51.5072178!4d-0.1275862!16zL20vMDRqcGw?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D'" class="view-btn">View Map</button>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+        <h1 style="color: #0f172a; text-align: center;">Our-other locations</h1>
+        <section class="store-locations">
+            <div class="store-grid">
+                <div class="store-card">
+                    <h2 style="color: black;">Tashkent</h3>
+                    <p><i data-lucide="map-pin"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis numquam possimus ducimus, vitae at enim? Nobis deleniti voluptatum, labore exercitationem enim ab facere corporis animi omnis mollitia odit, cum magnam?</p>
+                    <p><i data-lucide="phone"></i> +998901234567</p>
+                    <p><i data-lucide="mail"></i> kyuter12@gmail.com</p>
+                    <p><i data-lucide="clock"></i> Mon-Sat: 9am-6pm, Sun: 10am-4pm</p>
+                </div>
+                <div class="store-card">
+                    <h2 style="color: black;">Kokand</h3>
+                    <p><i data-lucide="map-pin"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quasi voluptatum maxime ut impedit. Nam commodi aliquid, sed sit harum numquam labore unde velit quaerat similique ex, corrupti omnis asperiores?</p>
+                    <p><i data-lucide="phone"></i> +999890123456</p>
+                    <p><i data-lucide="mail"></i> kyuter12@gmail.com</p>
+                    <p><i data-lucide="clock"></i> Mon-Sat: 9am-6pm, Sun: 10am-4pm</p>
+                </div>
+                <div class="store-card">
+                    <h2 style="color: black;">Samarkand</h3>
+                    <p><i data-lucide="map-pin"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quasi voluptatum maxime ut impedit. Nam commodi aliquid, sed sit harum numquam labore unde velit quaerat similique ex, corrupti omnis asperiores?</p>
+                    <p><i data-lucide="phone"></i> +999890123456</p>
+                    <p><i data-lucide="mail"></i> kyuter12@gmail.com</p>
+                    <p><i data-lucide="clock"></i> Mon-Sat: 9am-6pm, Sun: 10am-4pm</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-el">
+                <div class="footer-logo">
+                    <img src="elements/icon.png" alt="icon" class="icon-box">
+                    <h2>Tech House</h2>
+                </div>
+                <p>Your trusted partner for quality home appliances since 2010. Excellence in every product.</p>
+                <div class="social-links">
+                    <a href="#"><i data-lucide="facebook" size="18"></i></a>
+                    <a href="#"><i data-lucide="twitter" size="18"></i></a>
+                    <a href="#"><i data-lucide="instagram" size="18"></i></a>
+                    <a href="#"><i data-lucide="linkedin" size="18"></i></a>
+                </div>
+            </div>
+            <div class="footer-holder">
+                <div class="footer-el">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="all products.html">Shop All Products</a></li>
+                        <li><a href="membership.html">Membership Program</a></li>
+                        <li><a href="contact us.html">Store Locations</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-el">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact us.html">Delivery Information</a></li>
+                        <li><a href="contact us.html">Returns & Refunds</a></li>
+                        <li><a href="membership.html">FAQ & Support</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-el">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <i data-lucide="phone" size="18"></i>
+                        <div>
+                            <strong>Call Us</strong>
+                            <p>+998 90 855 75 85</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="mail" size="18"></i>
+                        <div>
+                            <strong>Email Us</strong>
+                            <p>kyuter789@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="map-pin" size="18"></i>
+                        <div>
+                            <strong>Visit Us</strong>
+                            <p>Uzbekistan , Tashkent , Sergeli</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Tech House. All rights reserved. Built with excellence.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+    <script src="search.js"></script>
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

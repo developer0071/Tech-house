@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech House - Premium Appliances</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <base href="https://developer0071.github.io/Tech-house/">
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="sidebar" id="sidebar">
+        <button class="sidebar-close" id="closeMenu">
+            <i data-lucide="x" size="32"></i>
+        </button>
+        <a href="home page.html"><i data-lucide="home"></i><span>Home</span></a>
+        <a href=""><i data-lucide="info"></i><span>About</span></a>
+        <a href="all products.html"><i data-lucide="box"></i><span>Products</span></a>
+        <a href="location.html"><i data-lucide="map-pin"></i><span>Locations</span></a>
+        <a href="contact us.html"><i data-lucide="phone"></i><span>Contact</span></a>
+        <a id="nav-active-page" href="membership.html">
+            <i data-lucide="zap" size="16" fill="white"></i> 
+            <span>Membership</span>
+        </a>
+        <a href="index.html"class="btn-sign-out mobile">
+            <i data-lucide="log-out" size="18"></i> 
+            <span>Sign out</span>
+        </a>
+    </div>
+    <header>
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <div class="dot"></div>
+                <p>
+                    Free delivery on orders over £50 | Student discount available
+                </p>
+            </div>
+            <div class="top-bar-right">
+
+                <a href="index.html" class="btn-sign-out desktop">
+                    <i data-lucide="log-out" size="18"></i> 
+                    <span>Sign out</span>
+                </a>
+            </div>
+        </div>
+
+        <nav class="nav-main">
+            <div class="logo-section">
+                <img style="cursor: pointer;" onclick="location.href='home page.html'" src="elements/icon.png" alt="icon" class="icon-box">
+                <div style="cursor: pointer;" onclick="location.href='home page.html'" class="logo-text">
+                    <h1>Tech House</h1>
+                    <p>PREMIUM APPLIANCES</p>
+                </div>
+            </div>
+
+            <div class="search-container">
+                <input type="text" id="product-search" placeholder="Search for products...">
+                
+                <button class="search-btn" onclick="updateSearch()">
+                    <i data-lucide="search" size="18"></i>
+                </button>
+            </div>
+
+
+            <div class="user-actions">
+
+                <div  onclick="location.href='cart.html'" class="action-item cart">
+                    <i data-lucide="shopping-cart"></i>
+                    Cart
+                </div>
+
+                <button class="mobile-hamburger" id="openMenu">
+                    <i data-lucide="menu" size="28"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div class="nav-bottom">
+            <a class="nav-a"  href="home page.html"><i data-lucide="home"></i><span>Home</span></a>
+            <div class="nav-dropdown-wrapper">
+                <a class="nav-a" href="">
+                    <i data-lucide="info"></i>
+                    <span>About</span>
+                    <i data-lucide="chevron-down" style="width: 14px; margin-left: 4px;"></i>
+                </a>
+
+                <div class="grid-about-hover">
+                    <div class="menu-column">
+                        <h4>Discover Tech House</h4>
+                        <a href="about us.html">Our Story</a>
+                        <a href="location.html">Store Locations</a>
+                    </div>
+                    <div class="menu-visuals">
+                        <div onclick="location.href='location.html'" class="visual-item">
+                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=400&q=80" alt="Store">
+                            <span>Visit our Showroom</span>
+                        </div>
+                        <div onclick="location.href='all products.html'" class="visual-item">
+                            <img src="https://avatars.mds.yandex.net/i?id=82863daf30cd0c1dace6ae5acb029794f3cffc8f4b14c742-4935642-images-thumbs&n=13" alt="Technology">
+                            <span>Latest Tech</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="nav-a" href="all products.html"><i data-lucide="box"></i><span>Products</span></a>
+            <a class="nav-a" href="contact us.html" ><i data-lucide="phone" ></i><span>Contact</span></a>
+            <a id="nav-active-page" href="membership.html" class="membership-pill">
+                <i data-lucide="zap" size="16" fill="#fbbf24"></i> 
+                <span>Membership</span>
+            </a>
+        </div>
+
+    </header>
+    
+    <main class="hero">
+        <h2>Tech House Membership</h2>
+        
+        <p style="text-align: center;">Join our membership program and enjoy exclusive benefits, discounts, and premium services</p>
+    </main>
+
+    <main class="options-prc">
+        <div class="option-pr" id="bronze">
+            <div class="title-op">
+                <img class="op-img" src="https://avatars.mds.yandex.net/i?id=9a683828b9dc411284a449ab836db3c5762bb9b8-10025596-images-thumbs&n=13" alt="bronze">
+                <h1>Bronze</h1>
+            </div>
+            <span>> Exclusive member-only offers</span>
+            <span>> 5% discount on all products</span>
+            <span>> Early access to sales</span>
+            <span>> Birthday bonus voucher</span>
+            <span>> Free standard delivery over £50</span>           
+            <button onclick="location.href='home page.html'" class="opt-btn bronze-btn">Sign up free</button>
+        </div>
+        <div class="option-pr" id="silver">
+            <div class="title-op">
+                <img class="op-img" src="https://avatars.mds.yandex.net/i?id=b10b213f73058530b4551f9eb9892657cc7c3d33-16297497-images-thumbs&n=13" alt="bronze">
+                <h1>Silver</h1>
+            </div>
+            <span>> All Bronze benefits</span>
+            <span>> 10% discount on all products</span>
+            <span>> Free standard delivery (no minimum)</span>
+            <span>> Priority customer service</span>
+            <span>> Extended returns (60 days)</span>
+            <span>> 2-year extended warranty</span>
+            <button onclick="location.href='subs/silver.html'" class="opt-btn silver-btn">Subscribe now</button>
+        </div>
+        <div class="option-pr" id="golden">
+            <div class="title-op">
+                <img class="op-img" src="https://avatars.mds.yandex.net/i?id=841977252fdb4f3e8f1119a44655f7b00c4b4264-5220454-images-thumbs&n=13" alt="bronze">
+                <h1>Golden</h1>
+            </div>
+            <span>> All Silver benefits</span>
+            <span>> 15% discount on all products</span>
+            <span>> Free express delivery</span>
+            <span>> VIP customer service line</span>
+            <span>> Exclusive Gold-only products</span>
+            <span>> 3-year extended warranty</span>
+            <span>> Free installation service</span>
+            <span>> Annual tech consultation</span>
+            <button onclick="location.href='subs/golden.html'" class="opt-btn gold-btn">Subscribe now</button>
+        </div>
+    </main>
+
+    <main class="perks">
+        <h1 style="color: black; text-align: center; background: rgba(230, 229, 229, 0.329); padding: 15px 5px; border-radius: 50px;">Why choose us</h1>
+        <div class="card-box">
+            <div class="card">
+                <div style="background: #1f2937; padding: 15px; border-radius: 12px; color: white; margin-bottom: 20px;">
+                    <i data-lucide="truck"></i>
+                </div>
+                <h3 style="margin: 0 0 10px 0; font-size: 18px;">Fast Delivery</h3>
+                <p style="margin: 0; color: #6b7280; font-size: 14px;">Next day available</p>
+            </div>
+
+            <div class="card">
+                <div style="background: #1f2937; padding: 15px; border-radius: 12px; color: white; margin-bottom: 20px;">
+                    <i data-lucide="shield"></i>
+                </div>
+                <h3 style="margin: 0 0 10px 0; font-size: 18px;">2 Year Warranty</h3>
+                <p style="margin: 0; color: #6b7280; font-size: 14px;">All products covered</p>
+            </div>
+
+            <div class="card">
+                <div style="background: #1f2937; padding: 15px; border-radius: 12px; color: white; margin-bottom: 20px;">
+                    <i data-lucide="tag"></i>
+                </div>
+                <h3 style="margin: 0 0 10px 0; font-size: 18px;">Best Prices</h3>
+                <p style="margin: 0; color: #6b7280; font-size: 14px;">Price match guarantee</p>
+            </div>
+
+            <div class="card">
+                <div style="background: #1f2937; padding: 15px; border-radius: 12px; color: white; margin-bottom: 20px;">
+                    <i data-lucide="refresh-cw"></i>
+                </div>
+                <h3 style="margin: 0 0 10px 0; font-size: 18px;">Easy Returns</h3>
+                <p style="margin: 0; color: #6b7280; font-size: 14px;">30 day policy</p>
+            </div>
+        </div>
+    </main>
+    <section class="faq-section">
+        <h1 class="faq-title">Frequently Asked Questions</h1>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <h3>Can I cancel my membership anytime?</h3>
+                <p>Yes, you can cancel your paid membership at any time. You will continue to receive benefits until the end of your billing period.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I upgrade my membership tier?</h3>
+                <p>You can upgrade your membership tier at any time through your account settings. The price difference will be prorated.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Do membership discounts apply to sale items?</h3>
+                <p>Yes, membership discounts can be combined with most sale prices, giving you even greater savings.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is the free Bronze membership really free?</h3>
+                <p>Yes! Bronze membership is completely free with no hidden costs. Simply sign up to start enjoying member benefits.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-el">
+                <div class="footer-logo">
+                    <img src="elements/icon.png" alt="icon" class="icon-box">
+                    <h2>Tech House</h2>
+                </div>
+                <p>Your trusted partner for quality home appliances since 2010. Excellence in every product.</p>
+                <div class="social-links">
+                    <a href="#"><i data-lucide="facebook" size="18"></i></a>
+                    <a href="#"><i data-lucide="twitter" size="18"></i></a>
+                    <a href="#"><i data-lucide="instagram" size="18"></i></a>
+                    <a href="#"><i data-lucide="linkedin" size="18"></i></a>
+                </div>
+            </div>
+            <div class="footer-holder">
+                <div class="footer-el">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="all products.html">Shop All Products</a></li>
+                        <li><a href="membership.html">Membership Program</a></li>
+                        <li><a href="contact us.html">Store Locations</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-el">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact us.html">Delivery Information</a></li>
+                        <li><a href="contact us.html">Returns & Refunds</a></li>
+                        <li><a href="membership.html">FAQ & Support</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-el">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <i data-lucide="phone" size="18"></i>
+                        <div>
+                            <strong>Call Us</strong>
+                            <p>+998 90 855 75 85</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="mail" size="18"></i>
+                        <div>
+                            <strong>Email Us</strong>
+                            <p>kyuter789@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="map-pin" size="18"></i>
+                        <div>
+                            <strong>Visit Us</strong>
+                            <p>Uzbekistan , Tashkent , Sergeli</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Tech House. All rights reserved. Built with excellence.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+    <script src="search.js"></script>
+</body>
+</html>

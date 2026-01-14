@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech House - Premium Appliances</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <base href="https://developer0071.github.io/Tech-house/">
+    <link rel="stylesheet" href="css files/style.css">
+    <style>
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .video-background video {
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+    </style>
+</style>
+</head>
+<body>
+    <div class="video-background">
+    <video autoplay muted loop playsinline>
+        <source src="https://ik.imagekit.io/Eduventure/animations/particles_gold_glitter_bokeh_award_dust_abstract_background_loop%20(online-video-cutter.com).mp4?updatedAt=1768131146312" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+<form action="home page.html" method="get" class="sub-card gold" style="margin: 40px auto;">
+    <div class="reg-header gold">
+        <div class="box-icon">
+            <img src="elements/icon.png" alt="">
+        </div>
+        <h2>Subscribe for GOLDEN USER</h2>
+        <p style="margin-top: 30px;">Join Tech House GOLDEN USER subscription for exclusive member perks</p>
+    </div>
+
+    <div class="form-group">
+        <label for="full-name">Full Name</label>
+        <div class="input-wrapper">
+            <i data-lucide="user" class="input-icon"></i>
+            <input type="text" id="full-name" name="fullName" placeholder="John Doe" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <div class="input-wrapper">
+            <i data-lucide="mail" class="input-icon"></i>
+            <input type="email" id="email" name="email" placeholder="name@example.com" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="password">Card Number</label>
+        <div class="input-wrapper">
+            <i data-lucide="credit-card" class="input-icon"></i>
+            <input type="password" id="password" name="password" placeholder="••••••••" minlength="8" required>
+        </div>
+    </div>
+
+    <button type="submit" class="reg-btn gold">Sign Up</button>
+</form>
+    <script src="script.js"></script>
+</body>
+</html>

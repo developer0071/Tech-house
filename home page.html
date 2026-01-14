@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech House - Premium Appliances</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <base href="https://developer0071.github.io/Tech-house/">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="sidebar" id="sidebar">
+        <button class="sidebar-close" id="closeMenu">
+            <i data-lucide="x" size="32"></i>
+        </button>
+        <a href="home page.html" id="nav-active-page"><i data-lucide="home"></i><span>Home</span></a>
+        <a href=""><i data-lucide="info"></i><span>About</span></a>
+        <a href="all products.html"><i data-lucide="box"></i><span>Products</span></a>
+        <a href="location.html"><i data-lucide="map-pin"></i><span>Locations</span></a>
+        <a href="contact us.html"><i data-lucide="phone"></i><span>Contact</span></a>
+        <a href="membership.html">
+            <i data-lucide="zap" size="16" fill="white"></i> 
+            <span>Membership</span>
+        </a>
+        <a href="index.html"class="btn-sign-out mobile">
+            <i data-lucide="log-out" size="18"></i> 
+            <span>Sign out</span>
+        </a>
+    </div>
+    <header>
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <div class="dot"></div>
+                <p>
+                    Free delivery on orders over £50 | Student discount available
+                </p>
+            </div>
+            <div class="top-bar-right">
+
+                <a href="index.html" class="btn-sign-out desktop">
+                    <i data-lucide="log-out" size="18"></i> 
+                    <span>Sign out</span>
+                </a>
+            </div>
+        </div>
+
+        <nav class="nav-main">
+            <div class="logo-section">
+                <img style="cursor: pointer;" onclick="location.href='home page.html'" src="elements/icon.png" alt="icon" class="icon-box">
+                <div style="cursor: pointer;" onclick="location.href='home page.html'" class="logo-text">
+                    <h1>Tech House</h1>
+                    <p>PREMIUM APPLIANCES</p>
+                </div>
+            </div>
+
+            <div class="search-container">
+                <input type="text" id="product-search" placeholder="Search for products...">
+                
+                <button class="search-btn" onclick="updateSearch()">
+                    <i data-lucide="search" size="18"></i>
+                </button>
+            </div>
+
+
+            <div class="user-actions">
+
+                <div  onclick="location.href='cart.html'" class="action-item cart">
+                    <i data-lucide="shopping-cart"></i>
+                    Cart
+                </div>
+
+                <button class="mobile-hamburger" id="openMenu">
+                    <i data-lucide="menu" size="28"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div class="nav-bottom">
+            <a class="nav-a" id="nav-active-page" href="home page.html"><i data-lucide="home"></i><span>Home</span></a>
+            <div class="nav-dropdown-wrapper">
+                <a class="nav-a" href="">
+                    <i data-lucide="info"></i>
+                    <span>About</span>
+                    <i data-lucide="chevron-down" style="width: 14px; margin-left: 4px;"></i>
+                </a>
+
+                <div class="grid-about-hover">
+                    <div class="menu-column">
+                        <h4>Discover Tech House</h4>
+                        <a href="about us.html">Our Story</a>
+                        <a href="location.html">Store Locations</a>
+                    </div>
+                    <div class="menu-visuals">
+                        <div onclick="location.href='location.html'" class="visual-item">
+                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=400&q=80" alt="Store">
+                            <span>Visit our Showroom</span>
+                        </div>
+                        <div onclick="location.href='all products.html'" class="visual-item">
+                            <img src="https://avatars.mds.yandex.net/i?id=82863daf30cd0c1dace6ae5acb029794f3cffc8f4b14c742-4935642-images-thumbs&n=13" alt="Technology">
+                            <span>Latest Tech</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="nav-a" href="all products.html"><i data-lucide="box"></i><span>Products</span></a>
+            <a class="nav-a" href="contact us.html" ><i data-lucide="phone" ></i><span>Contact</span></a>
+            <a href="membership.html" class="membership-pill">
+                <i data-lucide="zap" size="16" fill="#fbbf24"></i> 
+                <span>Membership</span>
+            </a>
+        </div>
+
+    </header>
+    
+
+    <main class="hero">
+        <h2>Premium Home<br>Appliances</h2>
+        
+        <p>Elevate your living space with cutting-edge household technology. Shop online or visit our stores for expert guidance.</p>
+
+        <div class="cta-group">
+            <a href="all products.html" class="btn-white">
+                Explore Collection 
+                <i data-lucide="arrow-right" size="18"></i>
+            </a>
+            <a href="membership.html" class="btn-outline">
+                <i data-lucide="zap" size="18"></i> 
+                Join Membership
+            </a>
+        </div>
+    </main>
+    <main class="perks">
+        <div class="card-box">
+            <div class="card">
+                <div style="background: #1f2937; padding: 15px; border-radius: 12px; color: white; margin-bottom: 20px;">
+                    <i data-lucide="truck"></i>
+                </div>
+                <h3 style="margin: 0 0 10px 0; font-size: 18px;">Fast Delivery</h3>
+                <p style="margin: 0; color: #6b7280; font-size: 14px;">Next day available</p>
+            </div>
+
+            <div class="card">
+                <div style="background: #1f2937; padding: 15px; border-radius: 12px; color: white; margin-bottom: 20px;">
+                    <i data-lucide="shield"></i>
+                </div>
+                <h3 style="margin: 0 0 10px 0; font-size: 18px;">2 Year Warranty</h3>
+                <p style="margin: 0; color: #6b7280; font-size: 14px;">All products covered</p>
+            </div>
+
+            <div class="card">
+                <div style="background: #1f2937; padding: 15px; border-radius: 12px; color: white; margin-bottom: 20px;">
+                    <i data-lucide="tag"></i>
+                </div>
+                <h3 style="margin: 0 0 10px 0; font-size: 18px;">Best Prices</h3>
+                <p style="margin: 0; color: #6b7280; font-size: 14px;">Price match guarantee</p>
+            </div>
+
+            <div class="card">
+                <div style="background: #1f2937; padding: 15px; border-radius: 12px; color: white; margin-bottom: 20px;">
+                    <i data-lucide="refresh-cw"></i>
+                </div>
+                <h3 style="margin: 0 0 10px 0; font-size: 18px;">Easy Returns</h3>
+                <p style="margin: 0; color: #6b7280; font-size: 14px;">30 day policy</p>
+            </div>
+        </div>
+    </main>
+
+    <h1 style="color: #0f172a; text-align: center;">Shop by Category</h1>
+
+    <h4 style="color: #0f172a; text-align: center;">Curated collections for every room</h4>
+    
+    <main class="category">
+        <div class="banner-box">
+            <div class="banner" onclick="location.href='all products.html'">
+                <img src="https://i.pinimg.com/originals/8b/8f/eb/8b8feb76de5bdd51ece9743116aa2126.jpg" alt="kitchen">
+                <div style="background: rgba(71, 72, 75, 0.5); padding: 15px 50px; border-radius: 12px; color: white; margin-bottom: 10px; z-index: 2;">
+                    <i data-lucide="utensils"></i>
+                </div>
+                <h1 class="banner-title">Kitchen</h1>
+                <h3 class="banner-title">Appliances</h3>
+            </div>
+
+            <div class="banner" onclick="location.href='all products.html'">
+                <img src="https://avatars.mds.yandex.net/i?id=e837cbb039719a3b8607355ba1e0b24357a3599a-5419265-images-thumbs&n=13" alt="cleaning">
+                <div style="background: rgba(31, 41, 55, 0.5); padding: 15px 50px; border-radius: 12px; color: white; margin-bottom: 10px; z-index: 2;">
+                    <i data-lucide="sparkles"></i>
+                </div>
+                <h1 class="banner-title">Cleaning</h1>
+                <h3 class="banner-title">Tech</h3>
+            </div>
+
+            <div class="banner" onclick="location.href='all products.html'">
+                <img src="https://avatars.mds.yandex.net/i?id=24c95cd35606b6f37820c7f3eebf2d4865ab0d97-3548415-images-thumbs&n=13" alt="laundry">
+                <div style="background: rgba(31, 41, 55, 0.5); padding: 15px 50px; border-radius: 12px; color: white; margin-bottom: 10px; z-index: 2;">
+                    <i data-lucide="washing-machine"></i>
+                </div>
+                <h1 class="banner-title">Laundry</h1>
+                <h3 class="banner-title">Tech</h3>
+            </div>
+
+            <div class="banner" onclick="location.href='all products.html'">
+                <img src="https://avatars.mds.yandex.net/i?id=2bdb5ce959803deffe138fc75528d4b21d129480-5870008-images-thumbs&n=13" alt="cooling">
+                <div style="background: rgba(31, 41, 55, 0.5); padding: 15px 50px; border-radius: 12px; color: white; margin-bottom: 10px; z-index: 2;">
+                    <i data-lucide="snowflake"></i>
+                </div>
+                <h1 class="banner-title">Cooling</h1>
+                <h3 class="banner-title">Tech</h3>
+            </div>
+        </div>
+    </main>
+    <section class="section-light" style="padding: 40px 5%; display: flex; justify-content: space-between; align-items: center;">
+        <h1 style="color: #0f172a; margin: 0;">Featured Products</h1>
+        <button onclick="location.href='all products.html'" class="explore-btn">
+            View All 
+            <i data-lucide="arrow-right" size="18"></i>
+        </button>
+    </section>
+    <main class="featured-products">
+        <div class="featured-box">
+            <div onclick="location.href='all products.html'" id="products-bridge" class="featured">
+                <img src="https://avatars.mds.yandex.net/i?id=82863daf30cd0c1dace6ae5acb029794f3cffc8f4b14c742-4935642-images-thumbs&n=13" alt="coffee maker">
+                <h3>ArcticBreeze Pro Wind</h3>
+                <div class="rating">
+                    <i data-lucide="star" fill="currentColor" size="14"></i>
+                    <i data-lucide="star" fill="currentColor" size="14"></i>
+                    <i data-lucide="star" fill="currentColor" size="14"></i>
+                    <i data-lucide="star" fill="currentColor" size="14"></i>
+                    <i data-lucide="star" size="14"></i> <span>(234)</span>
+                </div>
+                <div class="price-tag">£149.99</div>
+            </div>
+
+            <div onclick="location.href='all products.html'" id="products-bridge" class="featured">
+                <img src="https://i.ytimg.com/vi/puDGvKJw_Rw/maxresdefault.jpg" alt="vacuum">
+                <h3>UltraClean Vacuum Cleaner</h3>
+                <div class="rating">
+                    <i data-lucide="star" fill="currentColor" size="14"></i>
+                    <i data-lucide="star" fill="currentColor" size="14"></i>
+                    <i data-lucide="star" fill="currentColor" size="14"></i>
+                    <i data-lucide="star" fill="currentColor" size="14"></i>
+                    <i data-lucide="star" fill="currentColor" size="14"></i>
+                    <span>(521)</span>
+                </div>
+                <div class="price-tag">£99.99</div>
+            </div>
+            <div onclick="location.href='all products.html'" id="products-bridge" class="featured">
+                <img src="https://avatars.mds.yandex.net/i?id=c052cda0c5c9ede5100ace0872b7a6fa3a33882f-8428027-images-thumbs&n=13" alt="vacuum">
+                <h3>Digital Air Fryer XL</h3>
+                <div class="rating">
+                    <i data-lucide="star" fill="currentColor" size="14"></i>
+                    <i data-lucide="star" fill="currentColor" size="14"></i>
+                    <i data-lucide="star" fill="currentColor" size="14"></i>
+                    <i data-lucide="star" fill="currentColor" size="14"></i>
+                    <i data-lucide="star" size="14"></i>
+                    <span>(387)</span>
+                </div>
+                <div class="price-tag">$129.99</div>
+            </div>
+
+            <div onclick="location.href='all products.html'" id="products-bridge" class="featured">
+                <img src="https://avatars.mds.yandex.net/i?id=adc44e9e4c6a54b82298d6a3536a37ef012bf958-4570267-images-thumbs&n=13" alt="vacuum">
+                <h3>StainMaster Iron & Steamer</h3>
+                <div class="rating">
+                    <i data-lucide="star" fill="currentColor" size="14"></i>
+                    <i data-lucide="star" fill="currentColor" size="14"></i>
+                    <i data-lucide="star" fill="currentColor" size="14"></i>
+                    <i data-lucide="star" fill="currentColor" size="14"></i>
+                    <i data-lucide="star" size="14"></i>
+                    <span>(129)</span>
+                </div>
+                <div class="price-tag">£79.99</div>
+            </div>
+        </div>
+    </main>
+    <section class="promo-banner">
+        <div class="promo-content">
+            <span class="badge">Limited Offer</span>
+            <h2>Flash Sale: 20% Off All Cooling Tech</h2>
+            <p>Keep your home breezy this summer. Use code <strong>SUMMER20</strong> at checkout.</p>
+            <div class="countdown">
+                <div class="time-box"><span>02</span><p>Days</p></div>
+                <div class="time-box"><span>14</span><p>Hours</p></div>
+                <div class="time-box"><span>35</span><p>Mins</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h1 style="color: #0f172a; text-align: center;">What Our Customers Say</h1>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"The ArcticBreeze Pro is a game changer. Super quiet and cool!"</p>
+                <strong>— Sarah J.</strong>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Fast delivery and the 2-year warranty gives me real peace of mind."</p>
+                <strong>— Mark T.</strong>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p>"Best prices I've found for premium brands. Highly recommend Tech House."</p>
+                <strong>— Elena R.</strong>
+            </div>
+        </div>
+    </section>
+
+    <section class="locations-market">
+        <h1 style="color: #0f172a; text-align: center;">Our Showrooms</h1>
+        <p style="color: #6b7280; text-align: center; margin-bottom: 40px;">Visit us for a hands-on experience with premium technology</p>
+        
+        <div class="market-grid">
+            <div class="market-card">
+                <div class="market-image">
+                    <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80" alt="Tashkent Store">
+                </div>
+                <div class="market-info">
+                    <h3>Tashkent Central</h3>
+                    <p><i data-lucide="map-pin" size="14"></i> Sergeli District, Uzbekistan</p>
+                    <p><i data-lucide="clock" size="14"></i> 09:00 AM - 10:00 PM</p>
+                    <button onclick="location.href='https://www.google.com/maps/place/Tashkent,+Uzbekistan/@41.2826434,68.9497315,10z/data=!3m1!4b1!4m6!3m5!1s0x38ae8b0cc379e9c3:0xa5a9323b4aa5cb98!8m2!3d41.2982211!4d69.2385223!16zL20vMGZzbXk?entry=ttu&g_ep=EgoyMDI2MDEwNi4wIKXMDSoASAFQAw%3D%3D'" class="view-btn">View Map</button>
+                </div>
+            </div>
+            <div class="market-card">
+                <div class="market-image">
+                    <img src="https://avatars.mds.yandex.net/i?id=16c57a0ee0bbdd26642e291f29a383dd239c01c8-12422267-images-thumbs&n=13" alt="London Store">
+                </div>
+                <div class="market-info">
+                    <h3>London Flagship</h3>
+                    <p><i data-lucide="map-pin" size="14"></i> 221B Baker St, London</p>
+                    <p><i data-lucide="clock" size="14"></i> 10:00 AM - 08:00 PM</p>
+                    <button onclick="location.href='https://www.google.com/maps/place/London,+UK/@51.5267933,-0.7610306,9z/data=!3m1!4b1!4m6!3m5!1s0x47d8a00baf21de75:0x52963a5addd52a99!8m2!3d51.5072178!4d-0.1275862!16zL20vMDRqcGw?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D'" class="view-btn">View Map</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <h1 class="faq-title">Frequently Asked Questions</h1>
+        <div class="faq-container">
+            <div class="faq-item">
+                <h3>How long does delivery take?</h3>
+                <p>For orders placed before 2 PM, we offer next-day delivery across Tashkent. International shipping typically takes 5-7 business days.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What does the 2-year warranty cover?</h3>
+                <p>Our warranty covers all manufacturing defects and technical malfunctions for 24 months from the date of purchase.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do you offer installation services?</h3>
+                <p>Yes, for large kitchen and laundry appliances, our expert team provides professional installation at no extra cost.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-el">
+                <div class="footer-logo">
+                    <img src="elements/icon.png" alt="icon" class="icon-box">
+                    <h2>Tech House</h2>
+                </div>
+                <p>Your trusted partner for quality home appliances since 2010. Excellence in every product.</p>
+                <div class="social-links">
+                    <a href="#"><i data-lucide="facebook" size="18"></i></a>
+                    <a href="#"><i data-lucide="twitter" size="18"></i></a>
+                    <a href="#"><i data-lucide="instagram" size="18"></i></a>
+                    <a href="#"><i data-lucide="linkedin" size="18"></i></a>
+                </div>
+            </div>
+            <div class="footer-holder">
+                <div class="footer-el">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="all products.html">Shop All Products</a></li>
+                        <li><a href="membership.html">Membership Program</a></li>
+                        <li><a href="contact us.html">Store Locations</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-el">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact us.html">Delivery Information</a></li>
+                        <li><a href="contact us.html">Returns & Refunds</a></li>
+                        <li><a href="membership.html">FAQ & Support</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-el">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <i data-lucide="phone" size="18"></i>
+                        <div>
+                            <strong>Call Us</strong>
+                            <p>+998 90 855 75 85</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="mail" size="18"></i>
+                        <div>
+                            <strong>Email Us</strong>
+                            <p>kyuter789@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="map-pin" size="18"></i>
+                        <div>
+                            <strong>Visit Us</strong>
+                            <p>Uzbekistan , Tashkent , Sergeli</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Tech House. All rights reserved. Built with excellence.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+    <script src="search.js"></script>
+</body>
+</html>

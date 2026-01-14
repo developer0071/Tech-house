@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - Tech House</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <base href="https://developer0071.github.io/Tech-house/">
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="sidebar" id="sidebar">
+        <button class="sidebar-close" id="closeMenu">
+            <i data-lucide="x" size="32"></i>
+        </button>
+        <a href="home page.html"><i data-lucide="home"></i><span>Home</span></a>
+        <a href=""><i data-lucide="info"></i><span>About</span></a>
+        <a href="all products.html" id="nav-active-page"><i data-lucide="box"></i><span>Products</span></a>
+        <a href="location.html"><i data-lucide="map-pin"></i><span>Locations</span></a>
+        <a href="contact us.html"><i data-lucide="phone"></i><span>Contact</span></a>
+        <a href="membership.html">
+            <i data-lucide="zap" size="16" fill="white"></i> 
+            <span>Membership</span>
+        </a>
+        <a href="index.html"class="btn-sign-out mobile">
+            <i data-lucide="log-out" size="18"></i> 
+            <span>Sign out</span>
+        </a>
+    </div>
+    <header>
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <div class="dot"></div>
+                <p>
+                    Free delivery on orders over £50 | Student discount available
+                </p>
+            </div>
+            <div class="top-bar-right">
+
+                <a href="index.html" class="btn-sign-out desktop">
+                    <i data-lucide="log-out" size="18"></i> 
+                    <span>Sign out</span>
+                </a>
+            </div>
+        </div>
+
+        <nav class="nav-main">
+            <div class="logo-section">
+                <img style="cursor: pointer;" onclick="location.href='home page.html'" src="elements/icon.png" alt="icon" class="icon-box">
+                <div style="cursor: pointer;" onclick="location.href='home page.html'" class="logo-text">
+                    <h1>Tech House</h1>
+                    <p>PREMIUM APPLIANCES</p>
+                </div>
+            </div>
+
+            <div class="search-container">
+                <input type="text" id="product-search" placeholder="Search for products...">
+                
+                <button class="search-btn" onclick="updateSearch()">
+                    <i data-lucide="search" size="18"></i>
+                </button>
+            </div>
+
+            <div class="user-actions">
+
+                <div  onclick="location.href='cart.html'" class="action-item cart">
+                    <i data-lucide="shopping-cart"></i>
+                    Cart
+                </div>
+
+                <button class="mobile-hamburger" id="openMenu">
+                    <i data-lucide="menu" size="28"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div class="nav-bottom">
+            <a class="nav-a"  href="home page.html"><i data-lucide="home"></i><span>Home</span></a>
+            <div class="nav-dropdown-wrapper">
+                <a class="nav-a" href="">
+                    <i data-lucide="info"></i>
+                    <span>About</span>
+                    <i data-lucide="chevron-down" style="width: 14px; margin-left: 4px;"></i>
+                </a>
+
+                <div class="grid-about-hover">
+                    <div class="menu-column">
+                        <h4>Discover Tech House</h4>
+                        <a href="about us.html">Our Story</a>
+                        <a href="location.html">Store Locations</a>
+                    </div>
+                    <div class="menu-visuals">
+                        <div onclick="location.href='location.html'" class="visual-item">
+                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=400&q=80" alt="Store">
+                            <span>Visit our Showroom</span>
+                        </div>
+                        <div onclick="location.href='all products.html'" class="visual-item">
+                            <img src="https://avatars.mds.yandex.net/i?id=82863daf30cd0c1dace6ae5acb029794f3cffc8f4b14c742-4935642-images-thumbs&n=13" alt="Technology">
+                            <span>Latest Tech</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="nav-a" href="all products.html" id="nav-active-page"><i data-lucide="box"></i><span>Products</span></a>
+            <a class="nav-a" href="contact us.html" ><i data-lucide="phone" ></i><span>Contact</span></a>
+            <a href="membership.html" class="membership-pill">
+                <i data-lucide="zap" size="16" fill="#fbbf24"></i> 
+                <span>Membership</span>
+            </a>
+        </div>
+
+    </header>
+    
+    <div class="filter-bar">
+        <div class="filter-group">
+            <label>Category</label>
+            <select id="categoryFilter" class="filter-select">
+                <option value="all">All Categories</option>
+                <option value="kitchen">Kitchen</option>
+                <option value="cleaning">Cleaning</option>
+                <option value="cooling">Cooling</option>
+                <option value="laundry">Laundry</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label>Price Range</label>
+            <select id="priceFilter" class="filter-select">
+                <option value="all">All Prices</option>
+                <option value="0-100">Under £100</option>
+                <option value="100-200">£100 - £200</option>
+                <option value="200-300">£200 - £300</option>
+                <option value="300-500">£300 - £500</option>
+                <option value="500-999999">Above £500</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label>Availability</label>
+            <select id="stockFilter" class="filter-select">
+                <option value="all">All Products</option>
+                <option value="in-stock">In Stock Only</option>
+                <option value="out-of-stock">Out of Stock</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label>Sort By</label>
+            <select id="sortFilter" class="filter-select">
+                <option value="featured">Featured</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="name-az">Name: A to Z</option>
+                <option value="rating">Highest Rated</option>
+            </select>
+        </div>
+
+        <button class="clear-filters-btn" onclick="clearAllFilters()">Clear Filters</button>
+    </div>
+
+    <div class="page-header">
+        <h1>All Products</h1>
+        <p class="results-count" id="resultsCount">Showing 0 products</p>
+    </div>
+
+    <div class="products-container">
+        <div class="products-grid" id="productsGrid">
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-el">
+                <div class="footer-logo">
+                    <img src="elements/icon.png" alt="icon" class="icon-box">
+                    <h2>Tech House</h2>
+                </div>
+                <p>Your trusted partner for quality home appliances since 2010. Excellence in every product.</p>
+                <div class="social-links">
+                    <a href="#"><i data-lucide="facebook" size="18"></i></a>
+                    <a href="#"><i data-lucide="twitter" size="18"></i></a>
+                    <a href="#"><i data-lucide="instagram" size="18"></i></a>
+                    <a href="#"><i data-lucide="linkedin" size="18"></i></a>
+                </div>
+            </div>
+            <div class="footer-holder">
+                <div class="footer-el">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="all products.html">Shop All Products</a></li>
+                        <li><a href="membership.html">Membership Program</a></li>
+                        <li><a href="contact us.html">Store Locations</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-el">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact us.html">Delivery Information</a></li>
+                        <li><a href="contact us.html">Returns & Refunds</a></li>
+                        <li><a href="membership.html">FAQ & Support</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-el">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <i data-lucide="phone" size="18"></i>
+                        <div>
+                            <strong>Call Us</strong>
+                            <p>+998 90 855 75 85</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="mail" size="18"></i>
+                        <div>
+                            <strong>Email Us</strong>
+                            <p>kyuter789@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="map-pin" size="18"></i>
+                        <div>
+                            <strong>Visit Us</strong>
+                            <p>Uzbekistan , Tashkent , Sergeli</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Tech House. All rights reserved. Built with excellence.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="products.js"></script>
+    <script>
+        function filterAndDisplayProducts() {
+            const config = {
+                category: document.getElementById('categoryFilter').value,
+                price: document.getElementById('priceFilter').value,
+                stock: document.getElementById('stockFilter').value,
+                sort: document.getElementById('sortFilter').value
+            };
+
+            let list = Object.values(PRODUCTS).filter(p => {
+                const [min, max] = config.price.split('-').map(Number);
+                const matchCat = config.category === 'all' || p.category === config.category;
+                const matchPrice = config.price === 'all' || (p.price >= min && p.price <= max);
+                const matchStock = config.stock === 'all' || (config.stock === 'in-stock' ? p.inStock : !p.inStock);
+                
+                return matchCat && matchPrice && matchStock;
+            });
+
+            const sorters = {
+                'price-low': (a, b) => a.price - b.price,
+                'price-high': (a, b) => b.price - a.price,
+                'name-az': (a, b) => a.name.localeCompare(b.name),
+                'rating': (a, b) => b.rating - a.rating
+            };
+            if (sorters[config.sort]) list.sort(sorters[config.sort]);
+
+            renderUI(list);
+        }
+
+        function renderUI(products) {
+            const grid = document.getElementById('productsGrid');
+            document.getElementById('resultsCount').textContent = `Showing ${products.length} product(s)`;
+
+            if (products.length === 0) {
+                grid.innerHTML = '<div class="empty-state"><h2>No products found</h2></div>';
+                return;
+            }
+
+            grid.innerHTML = products.map(p => `
+                <div class="product-card" onclick="location.href='product.html?product=${p.id}'">
+                    ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
+                    <img src="${p.image}" alt="${p.name}" class="product-image">
+                    <h3 class="product-title">${p.name}</h3>
+                    <div class="product-footer">
+                        <div class="product-price">£${p.price.toFixed(2)}</div>
+                        <button class="add-to-cart-btn" onclick="event.stopPropagation(); addToCart('${p.id}')" ${!p.inStock ? 'disabled' : ''}>
+                            ${p.inStock ? 'Add to Cart' : 'Out of Stock'}
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+
+            lucide.createIcons();
+        }
+
+        function addToCart(id) {
+            const p = PRODUCTS[id];
+            showNotification(p.inStock ? `${p.name} added!` : "Out of stock", p.inStock ? "success" : "error");
+        }
+
+        function clearAllFilters() {
+            ['categoryFilter', 'priceFilter', 'stockFilter'].forEach(id => document.getElementById(id).value = 'all');
+            document.getElementById('sortFilter').value = 'featured';
+            filterAndDisplayProducts();
+        }
+
+        function showNotification(msg, type) {
+            const div = document.createElement('div');
+            div.className = `notification ${type}`;
+            div.textContent = msg;
+            document.body.appendChild(div);
+            setTimeout(() => {
+                div.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => div.remove(), 300);
+            }, 2500);
+        }
+
+        document.querySelectorAll('.filter-select').forEach(el => el.addEventListener('change', filterAndDisplayProducts));
+        window.addEventListener('DOMContentLoaded', filterAndDisplayProducts);
+    </script>
+    <script src="cart.js"></script>
+    <script src="search-products.js"></script>
+</body>
+</html>

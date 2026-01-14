@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech House - Premium Appliances</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <base href="https://developer0071.github.io/Tech-house/">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <base href="https://developer0071.github.io/Tech-house/">
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="sidebar" id="sidebar">
+        <button class="sidebar-close" id="closeMenu">
+            <i data-lucide="x" size="32"></i>
+        </button>
+        <a href="home page.html"><i data-lucide="home"></i><span>Home</span></a>
+        <a href=""><i data-lucide="info" id="nav-active-page"></i><span>About</span></a>
+        <a href="all products.html"><i data-lucide="box"></i><span>Products</span></a>
+        <a href="location.html"><i data-lucide="map-pin"></i><span>Locations</span></a>
+        <a href="contact us.html"><i data-lucide="phone"></i><span>Contact</span></a>
+        <a href="membership.html">
+            <i data-lucide="zap" size="16" fill="white"></i> 
+            <span>Membership</span>
+        </a>
+        <a href="index.html"class="btn-sign-out mobile">
+            <i data-lucide="log-out" size="18"></i> 
+            <span>Sign out</span>
+        </a>
+    </div>
+    <header>
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <div class="dot"></div>
+                <p>
+                    Free delivery on orders over £50 | Student discount available
+                </p>
+            </div>
+            <div class="top-bar-right">
+
+                <a href="index.html" class="btn-sign-out desktop">
+                    <i data-lucide="log-out" size="18"></i> 
+                    <span>Sign out</span>
+                </a>
+            </div>
+        </div>
+
+        <nav class="nav-main">
+            <div class="logo-section">
+                <img style="cursor: pointer;" onclick="location.href='home page.html'" src="elements/icon.png" alt="icon" class="icon-box">
+                <div style="cursor: pointer;" onclick="location.href='home page.html'" class="logo-text">
+                    <h1>Tech House</h1>
+                    <p>PREMIUM APPLIANCES</p>
+                </div>
+            </div>
+
+            <div class="search-container">
+                <input type="text" id="product-search" placeholder="Search for products...">
+                
+                <button class="search-btn" onclick="updateSearch()">
+                    <i data-lucide="search" size="18"></i>
+                </button>
+            </div>
+            <div class="user-actions">
+
+                <div  onclick="location.href='cart.html'" class="action-item cart">
+                    <i data-lucide="shopping-cart"></i>
+                    Cart
+                </div>
+
+                <button class="mobile-hamburger" id="openMenu">
+                    <i data-lucide="menu" size="28"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div class="nav-bottom">
+            <a class="nav-a"  href="home page.html"><i data-lucide="home"></i><span>Home</span></a>
+            <div class="nav-dropdown-wrapper">
+                <a class="nav-a" href="">
+                    <i data-lucide="info"></i>
+                    <span>About</span>
+                    <i data-lucide="chevron-down" style="width: 14px; margin-left: 4px;"></i>
+                </a>
+
+                <div class="grid-about-hover">
+                    <div class="menu-column">
+                        <h4>Discover Tech House</h4>
+                        <a href="about us.html">Our Story</a>
+                        <a href="location.html">Store Locations</a>
+                    </div>
+                    <div class="menu-visuals">
+                        <div onclick="location.href='location.html'" class="visual-item">
+                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=400&q=80" alt="Store">
+                            <span>Visit our Showroom</span>
+                        </div>
+                        <div onclick="location.href='all products.html'" class="visual-item">
+                            <img src="https://avatars.mds.yandex.net/i?id=82863daf30cd0c1dace6ae5acb029794f3cffc8f4b14c742-4935642-images-thumbs&n=13" alt="Technology">
+                            <span>Latest Tech</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="nav-a" href="all products.html"><i data-lucide="box"></i><span>Products</span></a>
+            <a class="nav-a" href="contact us.html"><i data-lucide="phone" ></i><span>Contact</span></a>
+            <a href="membership.html" class="membership-pill">
+                <i data-lucide="zap" size="16" fill="#fbbf24"></i> 
+                <span>Membership</span>
+            </a>
+        </div>
+
+    </header>
+    
+    <main>
+        <section class="about-hero">
+            <h1>The Tech House Story</h1>
+            <p>Founded by Khurshid in 2019, Uzbekistan.</p>
+        </section>
+
+        <section class="perks">
+            <div class="card-box">
+                <div class="card">
+                    <div style="background: #1f2937; padding: 15px; border-radius: 12px; color: white; margin-bottom: 20px;">
+                        <i data-lucide="user"></i>
+                    </div>
+                    <h3>Founder</h3>
+                    <p>Started by Khurshid</p>
+                </div>
+                <div class="card">
+                    <div style="background: #1f2937; padding: 15px; border-radius: 12px; color: white; margin-bottom: 20px;">
+                        <i data-lucide="map-pin"></i>
+                    </div>
+                    <h3>Location</h3>
+                    <p>Uzbekistan</p>
+                </div>
+                <div class="card">
+                    <div style="background: #1f2937; padding: 15px; border-radius: 12px; color: white; margin-bottom: 20px;">
+                        <i data-lucide="calendar"></i>
+                    </div>
+                    <h3>Established</h3>
+                    <p>Est. 2019</p>
+                </div>
+                <div class="card">
+                    <div style="background: #1f2937; padding: 15px; border-radius: 12px; color: white; margin-bottom: 20px;">
+                        <i data-lucide="award"></i>
+                    </div>
+                    <h3>Commitment</h3>
+                    <p>Premium Quality</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 style="text-align: center; font-size: 32px; margin-bottom: 10px;">Our Journey</h2>
+            <p style="text-align: center; color: #6b7280; margin-bottom: 40px;">How Khurshid built a tech empire in Uzbekistan.</p>
+            
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>2019: The Spark</h3>
+                        <p>Khurshid identifies a gap in the Uzbekistan market for premium, smart home appliances and launches Tech House.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>2021: Growth</h3>
+                        <p>Expanding from a small boutique to a full-scale online store, serving customers across Tashkent.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>2024: Innovation</h3>
+                        <p>Tech House becomes the exclusive partner for leading global smart-tech brands in the region.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>Today: The Future</h3>
+                        <p>Continuing to bring the world's most advanced household technology to every home in Uzbekistan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="commitment-banner">
+            <div class="commitment-text">
+                <h2 style="font-size: 36px; margin-bottom: 20px;">Why Trust Tech House?</h2>
+                <p style="font-size: 18px; line-height: 1.6; opacity: 0.9; margin-bottom: 20px;">
+                    Under Khurshid's leadership, we don't just sell products; we provide solutions. Every item in our catalog is hand-selected and tested for durability and performance.
+                </p>
+                <div style="display: flex; gap: 20px;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <i data-lucide="check-circle" style="color: #fbbf24;"></i> Certified Tech
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <i data-lucide="check-circle" style="color: #fbbf24;"></i> Expert Support
+                    </div>
+                </div>
+            </div>
+            <div class="commitment-image">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Tech Inspection">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-el">
+                <div class="footer-logo">
+                    <img src="elements/icon.png" alt="icon" class="icon-box">
+                    <h2>Tech House</h2>
+                </div>
+                <p>Your trusted partner for quality home appliances since 2010. Excellence in every product.</p>
+                <div class="social-links">
+                    <a href="#"><i data-lucide="facebook" size="18"></i></a>
+                    <a href="#"><i data-lucide="twitter" size="18"></i></a>
+                    <a href="#"><i data-lucide="instagram" size="18"></i></a>
+                    <a href="#"><i data-lucide="linkedin" size="18"></i></a>
+                </div>
+            </div>
+            <div class="footer-holder">
+                <div class="footer-el">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="all products.html">Shop All Products</a></li>
+                        <li><a href="membership.html">Membership Program</a></li>
+                        <li><a href="contact us.html">Store Locations</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-el">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact us.html">Delivery Information</a></li>
+                        <li><a href="contact us.html">Returns & Refunds</a></li>
+                        <li><a href="membership.html">FAQ & Support</a></li>
+                    </ul>
+                </div>
+    
+                <div class="footer-el">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <i data-lucide="phone" size="18"></i>
+                        <div>
+                            <strong>Call Us</strong>
+                            <p>+998 90 855 75 85</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="mail" size="18"></i>
+                        <div>
+                            <strong>Email Us</strong>
+                            <p>kyuter789@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="map-pin" size="18"></i>
+                        <div>
+                            <strong>Visit Us</strong>
+                            <p>Uzbekistan , Tashkent , Sergeli</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Tech House. All rights reserved. Built with excellence.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="search.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

@@ -16,16 +16,16 @@
         <button class="sidebar-close" id="closeMenu">
             <i data-lucide="x" size="32"></i>
         </button>
-        <a href="home page.html"><i data-lucide="home"></i><span>Home</span></a>
-        <a href=""><i data-lucide="info"></i><span>About</span></a>
+        <a href="home page.html" id="nav-active-page"><i data-lucide="home"></i><span>Home</span></a>
+        <a href="about us.html"><i data-lucide="info"></i><span>About</span></a>
         <a href="all products.html"><i data-lucide="box"></i><span>Products</span></a>
         <a href="location.html"><i data-lucide="map-pin"></i><span>Locations</span></a>
-        <a href="contact us.html" ><i data-lucide="phone"></i><span>Contact</span></a>
+        <a href="contact us.html"><i data-lucide="phone"></i><span>Contact</span></a>
         <a href="membership.html">
             <i data-lucide="zap" size="16" fill="white"></i> 
             <span>Membership</span>
         </a>
-        <a href="index.html" class="btn-sign-out mobile">
+        <a href="index.html"class="btn-sign-out mobile">
             <i data-lucide="log-out" size="18"></i> 
             <span>Sign out</span>
         </a>
@@ -63,6 +63,8 @@
                     <i data-lucide="search" size="18"></i>
                 </button>
             </div>
+
+
             <div class="user-actions">
 
                 <div  onclick="location.href='cart.html'" class="action-item cart">
@@ -77,9 +79,9 @@
         </nav>
 
         <div class="nav-bottom">
-            <a class="nav-a"  href="home page.html"><i data-lucide="home"></i><span>Home</span></a>
+            <a class="nav-a" id="nav-active-page" href="home page.html"><i data-lucide="home"></i><span>Home</span></a>
             <div class="nav-dropdown-wrapper">
-                <a class="nav-a" href="">
+                <a class="nav-a" href="javascript:void(0)">
                     <i data-lucide="info"></i>
                     <span>About</span>
                     <i data-lucide="chevron-down" style="width: 14px; margin-left: 4px;"></i>
@@ -112,6 +114,7 @@
         </div>
 
     </header>
+    
     
     <main class="cart-main-grid">
         <section class="cart-section">

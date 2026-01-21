@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - Tech House</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <base href="https://developer0071.github.io/Tech-house/">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="sidebar" id="sidebar">
+        <button class="sidebar-close" id="closeMenu">
+            <i data-lucide="x" size="32"></i>
+        </button>
+        <a href="home page.html">
+            <i data-lucide="home"></i>
+            <span>Home</span>
+        </a>
+        <a href="about us.html">
+            <i data-lucide="info"></i>
+            <span>About</span>
+        </a>
+        <a href="all products.html">
+            <i data-lucide="box"></i>
+            <span>Products</span>
+        </a>
+        <a href="location.html">
+            <i data-lucide="map-pin"></i>
+            <span>Locations</span>
+        </a>
+        <a href="contact us.html">
+            <i data-lucide="phone"></i>
+            <span>Contact</span>
+        </a>
+        <a href="membership.html">
+            <i data-lucide="zap" size="16" fill="white"></i>
+            <span>Membership</span>
+        </a>
+        <a href="index.html" class="btn-sign-out mobile">
+            <i data-lucide="log-out" size="18"></i>
+            <span>Sign out</span>
+        </a>
+    </div>
+
+    <header>
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <div class="dot"></div>
+                <p>Free delivery on orders over £50 | Student discount available</p>
+            </div>
+            <div class="top-bar-right">
+                <a href="index.html" class="btn-sign-out desktop">
+                    <i data-lucide="log-out" size="18"></i>
+                    <span>Sign out</span>
+                </a>
+            </div>
+        </div>
+
+        <nav class="nav-main">
+            <div class="logo-section">
+                <img style="cursor: pointer;" onclick="location.href='home page.html'" src="elements/icon.png" alt="icon" class="icon-box">
+                <div style="cursor: pointer;" onclick="location.href='home page.html'" class="logo-text">
+                    <h1>Tech House</h1>
+                    <p>PREMIUM APPLIANCES</p>
+                </div>
+            </div>
+
+            <div class="search-container">
+                <input type="text" id="product-search" placeholder="Search for products...">
+                <button class="search-btn">
+                    <i data-lucide="search" size="18"></i>
+                </button>
+            </div>
+
+            <div class="user-actions">
+                <div onclick="location.href='cart.html'" class="action-item cart">
+                    <i data-lucide="shopping-cart"></i>
+                    Cart
+                </div>
+                <div onclick="location.href='account.html'" class="action-item cart">
+                    <i data-lucide="user"></i>
+                    Profile
+                </div>
+                <button class="mobile-hamburger" id="openMenu">
+                    <i data-lucide="menu" size="28"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div class="nav-bottom">
+            <a class="nav-a" href="home page.html">
+                <i data-lucide="home"></i>
+                <span>Home</span>
+            </a>
+            <div class="nav-dropdown-wrapper">
+                <a class="nav-a" href="javascript:void(0)">
+                    <i data-lucide="info"></i>
+                    <span>About</span>
+                    <i data-lucide="chevron-down" style="width: 14px; margin-left: 4px;"></i>
+                </a>
+                <div class="grid-about-hover">
+                    <div class="menu-column">
+                        <h4>Discover Tech House</h4>
+                        <a href="about us.html">Our Story</a>
+                        <a href="location.html">Store Locations</a>
+                    </div>
+                    <div class="menu-visuals">
+                        <div onclick="location.href='location.html'" class="visual-item">
+                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=400&q=80" alt="Store">
+                            <span>Visit our Showroom</span>
+                        </div>
+                        <div onclick="location.href='all products.html'" class="visual-item">
+                            <img src="https://avatars.mds.yandex.net/i?id=82863daf30cd0c1dace6ae5acb029794f3cffc8f4b14c742-4935642-images-thumbs&n=13" alt="Technology">
+                            <span>Latest Tech</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="nav-a" href="all products.html">
+                <i data-lucide="box"></i>
+                <span>Products</span>
+            </a>
+            <a class="nav-a" href="contact us.html">
+                <i data-lucide="phone"></i>
+                <span>Contact</span>
+            </a>
+            <a href="membership.html" class="membership-pill">
+                <i data-lucide="zap" size="16" fill="#fbbf24"></i>
+                <span>Membership</span>
+            </a>
+        </div>
+    </header>
+
+    <div class="account-container">
+        <div class="account-grid">
+            <div class="account-sidebar">
+                <div class="user-profile">
+                    <div class="user-avatar" id="userAvatar">JD</div>
+                    <div class="user-details-compact">
+                        <h3 class="user-name" id="userName">John Doe</h3>
+                        <p class="user-email" id="userEmail">john.doe@example.com</p>
+                        <span class="membership-badge">
+                            <i data-lucide="crown" size="14"></i>
+                            <span id="membershipType">Bronze Member</span>
+                        </span>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <a href="#" class="nav-link active" data-section="overview">
+                        <i data-lucide="layout-dashboard" size="18"></i>
+                        <span>Overview</span>
+                    </a>
+                    <a href="#" class="nav-link" data-section="orders">
+                        <i data-lucide="package" size="18"></i>
+                        <span>Orders</span>
+                    </a>
+                    <a href="#" class="nav-link" data-section="profile">
+                        <i data-lucide="user" size="18"></i>
+                        <span>Profile</span>
+                    </a>
+                    <a href="#" class="nav-link" data-section="settings">
+                        <i data-lucide="settings" size="18"></i>
+                        <span>Settings</span>
+                    </a>
+                </nav>
+            </div>
+
+            <div class="account-content">
+                <div class="content-section active" id="overview-section">
+                    <div class="section-header">
+                        <div>
+                            <h2 class="section-title">Account Overview</h2>
+                            <p style="color: #6b7280; margin: 5px 0 0 0;">
+                                Welcome back, <span id="welcomeName">John</span>!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i data-lucide="shopping-bag" size="24"></i>
+                            </div>
+                            <p class="stat-value" id="totalOrders">0</p>
+                            <p class="stat-label">Total Orders</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i data-lucide="credit-card" size="24"></i>
+                            </div>
+                            <p class="stat-value" id="totalSpent">£0.00</p>
+                            <p class="stat-label">Total Spent</p>
+                        </div>
+                    </div>
+
+                    <h3 style="color: #111827; margin-bottom: 20px;">Recent Orders</h3>
+                    <div id="recentOrdersContainer">
+                        <div class="empty-state">
+                            <div class="empty-icon">
+                                <i data-lucide="package" size="40"></i>
+                            </div>
+                            <h3 class="empty-title">No orders yet</h3>
+                            <p class="empty-text">Start shopping to see your orders here</p>
+                            <button class="edit-btn" onclick="location.href='all products.html'">
+                                Browse Products
+                                <i data-lucide="arrow-right" size="16"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section" id="orders-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Order History</h2>
+                    </div>
+                    <div id="ordersContainer">
+                        <div class="empty-state">
+                            <div class="empty-icon">
+                                <i data-lucide="package" size="40"></i>
+                            </div>
+                            <h3 class="empty-title">No orders yet</h3>
+                            <p class="empty-text">Your order history will appear here</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section" id="profile-section">
+                    <div class="section-header">
+                        <h2 class="section-title">My Profile</h2>
+                        <button class="edit-btn" id="editProfileBtn">
+                            <i data-lucide="edit-2" size="16"></i>
+                            Edit Profile
+                        </button>
+                    </div>
+
+                    <div class="info-grid" id="profileView">
+                        <div class="info-item">
+                            <p class="info-label">Full Name</p>
+                            <p class="info-value" id="profileName">John Doe</p>
+                        </div>
+                        <div class="info-item">
+                            <p class="info-label">Email Address</p>
+                            <p class="info-value" id="profileEmail">john.doe@example.com</p>
+                        </div>
+                        <div class="info-item">
+                            <p class="info-label">Phone Number</p>
+                            <p class="info-value" id="profilePhone">Not provided</p>
+                        </div>
+                        <div class="info-item">
+                            <p class="info-label">Member Since</p>
+                            <p class="info-value" id="memberSince">January 2026</p>
+                        </div>
+                    </div>
+
+                    <div id="profileEditForm" style="display: none;">
+                        <div class="form-group-account">
+                            <label>Full Name</label>
+                            <input type="text" id="editName" placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group-account">
+                            <label>Email Address</label>
+                            <input type="email" id="editEmail" placeholder="Enter your email">
+                        </div>
+                        <div class="form-group-account">
+                            <label>Phone Number</label>
+                            <input type="tel" id="editPhone" placeholder="Enter your phone number">
+                        </div>
+                        <div style="display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap;">
+                            <button class="save-btn" id="saveProfileBtn">Save Changes</button>
+                            <button class="edit-btn" id="cancelEditBtn" style="background: #e5e7eb; color: #111827;">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section" id="settings-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Account Settings</h2>
+                    </div>
+
+                    <div class="form-group-account">
+                        <label>Password</label>
+                        <input type="password" value="••••••••" disabled>
+                        <button class="edit-btn" style="margin-top: 10px;">
+                            <i data-lucide="lock" size="16"></i>
+                            Change Password
+                        </button>
+                    </div>
+
+                    <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid #e5e7eb;">
+                        <button class="edit-btn" style="background: #ef4444;" onclick="handleLogout()">
+                            <i data-lucide="log-out" size="16"></i>
+                            Sign Out
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-el">
+                <div class="footer-logo">
+                    <img src="elements/icon.png" alt="icon" class="icon-box">
+                    <h2>Tech House</h2>
+                </div>
+                <p>Your trusted partner for quality home appliances since 2010.</p>
+                <div class="social-links">
+                    <a href="#">
+                        <i data-lucide="facebook" size="18"></i>
+                    </a>
+                    <a href="#">
+                        <i data-lucide="twitter" size="18"></i>
+                    </a>
+                    <a href="#">
+                        <i data-lucide="instagram" size="18"></i>
+                    </a>
+                    <a href="#">
+                        <i data-lucide="linkedin" size="18"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-holder">
+                <div class="footer-el">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="all products.html">Shop All Products</a></li>
+                        <li><a href="membership.html">Membership Program</a></li>
+                        <li><a href="contact us.html">Store Locations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-el">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="contact us.html">Delivery Information</a></li>
+                        <li><a href="contact us.html">Returns & Refunds</a></li>
+                        <li><a href="membership.html">FAQ & Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-el">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <i data-lucide="phone" size="18"></i>
+                        <div>
+                            <strong>Call Us</strong>
+                            <p>+998 90 855 75 85</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="mail" size="18"></i>
+                        <div>
+                            <strong>Email Us</strong>
+                            <p>kyuter789@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Tech House. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="account.js"></script>
+</body>
+</html>

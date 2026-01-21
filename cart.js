@@ -1,3 +1,4 @@
+
 let cart = [];
 
 window.addEventListener('DOMContentLoaded', function() {
@@ -29,11 +30,19 @@ function addToCart(id) {
     if (existing) {
         existing.qty += 1;
     } else {
-        cart.push({ id: id, name: product.name, price: product.price, image: product.image, category: product.category, qty: 1 });
+        cart.push({ 
+            id: id, 
+            name: product.name, 
+            price: product.price, 
+            image: product.image, 
+            category: product.category, 
+            qty: 1 
+        });
     }
     
     sessionStorage.setItem('cart', JSON.stringify(cart));
     showCartCount();
+    
 }
 
 function showCartCount() {
@@ -87,7 +96,6 @@ function showCartItems() {
                 <div style="flex: 1;">
                     <h4 style="margin: 0 0 4px 0; font-size: 15px; color: #111827;">${item.name}</h4>
                     <p style="margin: 0; font-size: 12px; color: #6b7280;">Art: JPH2020${item.id}</p>
-                    <p style="margin: 2px 0; font-size: 12px; color: #6b7280;">Size: XXS</p>
                     <p style="margin: 2px 0; font-size: 12px; color: #6b7280;">Colour: ${item.category}</p>
                 </div>
                 <div style="text-align: right;">
@@ -112,8 +120,8 @@ function updateEstimatedTime() {
     if (!timeText) return;
 
     const deliveryType = document.querySelector('input[name="delivery-type"]:checked').value;
-    const minDays = deliveryType === 'courier' ? 1 : 2;
-    const maxDays = deliveryType === 'courier' ? 3 : 5;
+    const minDays = deliveryType === 'express' ? 1 : 5;
+    const maxDays = deliveryType === 'express' ? 2 : 6;
     const randomDays = Math.floor(Math.random() * (maxDays - minDays + 1)) + minDays;
 
     const arrivalDate = new Date();
@@ -125,8 +133,9 @@ function updateEstimatedTime() {
 function changeQty(id, change) {
     const item = cart.find(i => i.id === id);
     item.qty += change;
-    if (item.qty <= 0) { removeItem(id); } 
-    else {
+    if (item.qty <= 0) { 
+        removeItem(id); 
+    } else {
         sessionStorage.setItem('cart', JSON.stringify(cart));
         showCartItems();
         showCartCount();
@@ -162,33 +171,83 @@ function updateTotal() {
     if (totalEl) totalEl.textContent = `£${total.toFixed(2)}`;
 }
 
+function processCheckout() {
+    const fname = document.getElementById('cust-fname')?.value.trim();
+    const lname = document.getElementById('cust-lname')?.value.trim();
+    const email = document.getElementById('cust-email')?.value.trim();
+    const phone = document.getElementById('cust-phone')?.value.trim();
+    const termsCheck = document.getElementById('terms-check')?.checked;
+
+    if (!fname || !lname || !email || !phone || !termsCheck) {
+        alert('Please fill in all details and accept Terms & Conditions.');
+        return;
+    }
+
+    const deliveryType = document.querySelector('input[name="delivery-type"]:checked').value;
+    const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+    const shipping = deliveryType === 'express' ? 10 : 0;
+    const discount = 3.00;
+    const finalTotal = parseFloat((subtotal + shipping - discount).toFixed(2));
+
+    const order = {
+        id: Date.now().toString().slice(-6),
+        date: new Date().toISOString(),
+        status: 'Processing',
+        items: [...cart],
+        total: finalTotal,
+        delivery: deliveryType
+    };
+
+    const userData = JSON.parse(localStorage.getItem('techHouseUser') || '{}');
+    
+    if (userData.email) {
+        userData.stats = userData.stats || { totalOrders: 0, totalSpent: 0 };
+        userData.orders = userData.orders || [];
+
+        userData.stats.totalOrders = (userData.stats.totalOrders || 0) + 1;
+        userData.stats.totalSpent = (parseFloat(userData.stats.totalSpent) || 0) + finalTotal;
+        
+        userData.orders.unshift(order);
+        
+        localStorage.setItem('techHouseUser', JSON.stringify(userData));
+    }
+
+    cart = [];
+    sessionStorage.removeItem('cart');
+    alert(`Order #${order.id} placed! Total: £${finalTotal}`);
+    window.location.href = 'account.html';
+}
+
 window.addToCart = addToCart;
+
 document.addEventListener('DOMContentLoaded', function() {
     const checkoutBtn = document.querySelector('.checkout-btn');
     if (checkoutBtn) {
-        checkoutBtn.addEventListener('click', function() {
-            const fname = document.getElementById('cust-fname')?.value;
-            const lname = document.getElementById('cust-lname')?.value;
-            const email = document.getElementById('cust-email')?.value;
-            const phone = document.getElementById('cust-phone')?.value;
-            const address = document.getElementById('cust-location')?.value;
-            const termsCheck = document.getElementById('terms-check')?.checked;
-
-            if (!fname || !lname || !email || !phone || !address) {
-                alert('Please fill in all required information before proceeding.');
-                return;
-            }
-            
-            if (!termsCheck) {
-                alert('Please accept the Terms & Conditions to proceed.');
-                return;
-            }
-
-            alert(`Thank you, ${fname} ${lname}! Your order has been placed successfully.`);
-            
-            cart = [];
-            sessionStorage.removeItem('cart');
-            window.location.href = 'home page.html';
-        });
+        checkoutBtn.addEventListener('click', processCheckout);
     }
 });
+
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes slideIn {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    @keyframes slideOut {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(style);

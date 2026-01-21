@@ -6,65 +6,61 @@
     <title>Tech House - Premium Appliances</title>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <base href="https://developer0071.github.io/Tech-house/">
+    <!-- <base href="https://developer0071.github.io/Tech-house/"> -->
     <link rel="stylesheet" href="style.css">
-    <style>
-        #loginBtn {
-            color: blue; 
-            cursor: pointer;
-            text-decoration: underline;
-        }
-        #loginBtn:hover {
-            color: red;
-        }
-        .hidden {
-            display: none;
-        }
-    </style>
+
 </head>
 <body>
-    <form action="home page.html" method="get" class="reg-card registration-form" style="margin: 40px auto; max-width: 400px; padding: 20px; border: 1px solid #ccc; border-radius: 8px;">
-        <div class="reg-header">
-            <div class="box-icon">
-                <img src="elements/icon.png" alt="">
-            </div>
-            <h2 id="form-title">Create Account</h2>
-            <p id="form-desc">Join Tech House for exclusive member perks</p>
-        </div>
 
-        <div class="form-group" id="name-group">
-            <label for="full-name">Full Name</label>
-            <div class="input-wrapper">
-                <i data-lucide="user" class="input-icon"></i>
-                <input type="text" id="full-name" name="fullName" placeholder="John Doe">
+    <div class="reg-card">
+        <form action="home page.html" method="get" class="registration-form">
+            <div class="logo-container">
+                <img src="elements/icon.png" alt="Tech House Logo">
+                <h2 id="form-title" style="margin: 0; font-size: 26px; font-weight: 700;">Create Account</h2>
+                <p id="form-desc" style="color: #1e293b; font-size: 14px; margin-top: 4px;">Join Tech House for exclusive member perks</p>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="email">Email Address</label>
-            <div class="input-wrapper">
-                <i data-lucide="mail" class="input-icon"></i>
-                <input type="email" id="email" name="email" placeholder="name@example.com" required>
+            <div class="form-group" id="name-group">
+                <label for="full-name">Full Name</label>
+                <div class="input-wrapper">
+                    <i data-lucide="user" class="input-icon"></i>
+                    <input type="text" id="full-name" name="fullName" placeholder="John Doe">
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <label for="password">Password</label>
-            <div class="input-wrapper">
-                <i data-lucide="lock" class="input-icon"></i>
-                <input type="password" id="password" name="password" placeholder="••••••••" minlength="8" required>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <div class="input-wrapper">
+                    <i data-lucide="mail" class="input-icon"></i>
+                    <input type="email" id="email" name="email" placeholder="name@example.com" required>
+                </div>
             </div>
-        </div>
 
-        <p style="margin-top: 10px;">
-            <span id="toggle-text">Already have an account?</span> 
-            <span id="loginBtn">Login</span>
-        </p>
-        
-        <button type="submit" id="submit-btn" class="reg-btn" style="width: 100%; padding: 10px; margin-top: 15px;">Sign Up</button>
-    </form>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="input-wrapper">
+                    <i data-lucide="lock" class="input-icon"></i>
+                    <input type="password" id="password" name="password" placeholder="Min. 8 characters" minlength="8" required>
+                </div>
+            </div>
+            
+            <button type="submit" id="submit-btn" class="reg-btn">Sign Up</button>
+
+            <p style="margin-top: 25px; text-align: center; font-size: 14px; color: #1e293b;">
+                <span id="toggle-text">Already have an account?</span> 
+                <span id="loginBtn">Login</span>
+            </p>
+        </form>
+    </div>
+
+    <div class="video-background">
+        <video autoplay loop muted playsinline>
+            <source src="https://ik.imagekit.io/Eduventure/animations/background_flowing_abstract_grey_and_white_blurred_waves_graphic.mp4" type="video/mp4">
+        </video>
+    </div>
 
     <script src="reg.js"></script>
     <script src="script.js"></script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>

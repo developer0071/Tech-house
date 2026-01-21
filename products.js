@@ -37,6 +37,44 @@ const PRODUCTS = {
     shipping: 'Free delivery on orders over £50',
     returns: '30-day money-back guarantee'
   },
+  'heater': {
+    id: 'Heater Super Canada',
+    name: 'Heater Super Canada',
+    category: 'heating',
+    price: 299.99,
+    image: 'https://i.ytimg.com/vi/puDGvKJw_Rw/maxresdefault.jpg',
+    additionalimgs: [
+      "https://avatars.mds.yandex.net/i?id=bb578e7d19450cfdcae1f2cb305c7a03915fa7d4-5234690-images-thumbs&n=13",
+      "https://avatars.mds.yandex.net/i?id=1e8d292497a08ebd0f67c3e7d664d62102d24353-10149683-images-thumbs&n=13",
+      "https://avatars.mds.yandex.net/i?id=93eb225701c766601c9a9d839e881b8648ec6b73-13234616-images-thumbs&n=13",
+      "https://avatars.mds.yandex.net/i?id=910a3aa80ceac0b70c3aa6cffddb1132f3ce26c0-5277860-images-thumbs&n=13",
+      "https://avatars.mds.yandex.net/i?id=6840c285bd31b6eae7c1836dfb39e23fb6b1f7f0-12528722-images-thumbs&n=13",
+      "https://avatars.mds.yandex.net/i?id=5b1bb39ae921d66dada922694aafa1b548c22f26-9181220-images-thumbs&n=13"
+    ],
+    rating: 5,
+    reviews: 512,
+    badge: 'Best Seller',
+    inStock: true,
+    description: 'Professional-grade vacuum cleaner with powerful suction and HEPA filtration. Perfect for all floor types and pet hair removal.',
+    features: [
+      'Powerful 2000W Motor',
+      'HEPA Filtration System',
+      'Multiple Attachments',
+      'Large Dust Capacity',
+      'Cord Storage System',
+      'Lightweight Design'
+    ],
+    specifications: {
+      'Power': '2000W',
+      'Dust Capacity': '2.5L',
+      'Cord Length': '8m',
+      'Weight': '4.5kg',
+      'Warranty': '2 Years',
+      'Noise Level': '75dB'
+    },
+    shipping: 'Free delivery on orders over £50',
+    returns: '30-day money-back guarantee'
+  },
 
   'cleaning-steam-mop': {
     id: 'cleaning-steam-mop',

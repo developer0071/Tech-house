@@ -33,7 +33,7 @@
             <span>Sign out</span>
         </a>
     </div>
-    <header>
+        <header>
         <div class="top-bar">
             <div class="top-bar-left">
                 <div class="dot"></div>
@@ -74,6 +74,10 @@
                     <i data-lucide="shopping-cart"></i>
                     Cart
                 </div>
+                <div  onclick="location.href='account.html'" class="action-item cart">
+                    <i data-lucide="user"></i>
+                    profile
+                </div>
 
                 <button class="mobile-hamburger" id="openMenu">
                     <i data-lucide="menu" size="28"></i>
@@ -82,7 +86,7 @@
         </nav>
 
         <div class="nav-bottom">
-            <a class="nav-a" href="home page.html"><i data-lucide="home"></i><span>Home</span></a>
+            <a class="nav-a"  href="home page.html"><i data-lucide="home"></i><span>Home</span></a>
             <div class="nav-dropdown-wrapper">
                 <a class="nav-a" href="javascript:void(0)">
                     <i data-lucide="info"></i>
@@ -93,7 +97,7 @@
                 <div class="grid-about-hover">
                     <div class="menu-column">
                         <h4>Discover Tech House</h4>
-                        <a href="about us.html">Our Story</a>
+                        <a id="nav-active-page" href="about us.html">Our Story</a>
                         <a href="location.html">Store Locations</a>
                     </div>
                     <div class="menu-visuals">
@@ -117,6 +121,7 @@
         </div>
 
     </header>
+    
     
 
     <main class="hero">

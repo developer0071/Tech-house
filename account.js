@@ -373,4 +373,4 @@ style.textContent = `
         }
     }
 `;
-document.head.appendChild(style);a
+document.head.appendChild(style);

@@ -1,4 +1,3 @@
-
 lucide.createIcons();
 
 class AccountManager {
@@ -62,7 +61,6 @@ class AccountManager {
                 const section = link.dataset.section;
                 this.showSection(section);
                 
-                // Update active state
                 navLinks.forEach(l => l.classList.remove('active'));
                 link.classList.add('active');
             });
@@ -85,6 +83,7 @@ class AccountManager {
             this.loadUserProfile();
         }
     }
+
     loadUserProfile() {
         if (!this.currentUser.email) return;
 
@@ -96,9 +95,18 @@ class AccountManager {
         const membershipTypeEl = document.getElementById('membershipType');
         
         if (userAvatarEl) userAvatarEl.textContent = initials;
-        if (userNameEl) userNameEl.textContent = this.currentUser.fullName;
-        if (userEmailEl) userEmailEl.textContent = this.currentUser.email;
-        if (welcomeNameEl) welcomeNameEl.textContent = this.currentUser.fullName.split(' ')[0];
+        if (userNameEl) {
+            userNameEl.textContent = this.currentUser.fullName;
+            userNameEl.style.color = '#111827';
+        }
+        if (userEmailEl) {
+            userEmailEl.textContent = this.currentUser.email;
+            userEmailEl.style.color = '#6b7280';
+        }
+        if (welcomeNameEl) {
+            welcomeNameEl.textContent = this.currentUser.fullName.split(' ')[0];
+            welcomeNameEl.style.color = '#111827';
+        }
         
         if (!this.currentUser.stats) {
             this.currentUser.stats = {
@@ -108,28 +116,50 @@ class AccountManager {
         }
 
         this.updateMembership();
-        if (membershipTypeEl) membershipTypeEl.textContent = `${this.currentUser.membership} Member`;
+        if (membershipTypeEl) {
+            membershipTypeEl.textContent = `${this.currentUser.membership} Member`;
+            membershipTypeEl.style.color = '#111827';
+        }
         
         const stats = this.currentUser.stats;
         const totalOrdersEl = document.getElementById('totalOrders');
         const totalSpentEl = document.getElementById('totalSpent');
         
-        if (totalOrdersEl) totalOrdersEl.textContent = stats.totalOrders || 0;
-        if (totalSpentEl) totalSpentEl.textContent = `£${(stats.totalSpent || 0).toFixed(2)}`;
+        if (totalOrdersEl) {
+            totalOrdersEl.textContent = stats.totalOrders || 0;
+            totalOrdersEl.style.color = '#111827';
+            totalOrdersEl.style.fontWeight = '700';
+            totalOrdersEl.style.fontSize = '32px';
+        }
+        if (totalSpentEl) {
+            totalSpentEl.textContent = `£${(stats.totalSpent || 0).toFixed(2)}`;
+            totalSpentEl.style.color = '#111827';
+            totalSpentEl.style.fontWeight = '700';
+            totalSpentEl.style.fontSize = '32px';
+        }
 
-        // Load profile info labels
         const profileNameEl = document.getElementById('profileName');
         const profileEmailEl = document.getElementById('profileEmail');
         const profilePhoneEl = document.getElementById('profilePhone');
         const memberSinceEl = document.getElementById('memberSince');
         
-        if (profileNameEl) profileNameEl.textContent = this.currentUser.fullName;
-        if (profileEmailEl) profileEmailEl.textContent = this.currentUser.email;
-        if (profilePhoneEl) profilePhoneEl.textContent = this.currentUser.phone || 'Not provided';
+        if (profileNameEl) {
+            profileNameEl.textContent = this.currentUser.fullName;
+            profileNameEl.style.color = '#111827';
+        }
+        if (profileEmailEl) {
+            profileEmailEl.textContent = this.currentUser.email;
+            profileEmailEl.style.color = '#111827';
+        }
+        if (profilePhoneEl) {
+            profilePhoneEl.textContent = this.currentUser.phone || 'Not provided';
+            profilePhoneEl.style.color = '#111827';
+        }
         
         if (memberSinceEl) {
             const memberDate = new Date(this.currentUser.memberSince);
             memberSinceEl.textContent = memberDate.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+            memberSinceEl.style.color = '#111827';
         }
 
         this.displayOrders();
@@ -147,6 +177,7 @@ class AccountManager {
             this.saveUserData(this.currentUser);
         }
     }
+
     getInitials(name) {
         if (!name) return 'U';
         const parts = name.split(' ');
@@ -163,25 +194,25 @@ class AccountManager {
         if (!this.currentUser.orders || this.currentUser.orders.length === 0) {
             if (ordersContainer && !ordersContainer.querySelector('.empty-state')) {
                 ordersContainer.innerHTML = `
-                    <div class="empty-state">
-                        <div class="empty-icon">
-                            <i data-lucide="package" size="40"></i>
+                    <div class="empty-state" style="text-align: center; padding: 60px 20px;">
+                        <div style="margin-bottom: 20px; color: #9ca3af;">
+                            <i data-lucide="package" size="48"></i>
                         </div>
-                        <h3 class="empty-title">No orders yet</h3>
-                        <p class="empty-text">Your order history will appear here</p>
+                        <h3 style="color: #111827; font-size: 20px; font-weight: 600; margin: 0 0 8px 0;">No orders yet</h3>
+                        <p style="color: #6b7280; font-size: 14px; margin: 0;">Your order history will appear here</p>
                     </div>
                 `;
             }
             
             if (recentOrdersContainer && !recentOrdersContainer.querySelector('.empty-state')) {
                 recentOrdersContainer.innerHTML = `
-                    <div class="empty-state">
-                        <div class="empty-icon">
+                    <div class="empty-state" style="text-align: center; padding: 40px 20px;">
+                        <div style="margin-bottom: 16px; color: #9ca3af;">
                             <i data-lucide="package" size="40"></i>
                         </div>
-                        <h3 class="empty-title">No orders yet</h3>
-                        <p class="empty-text">Start shopping to see your orders here</p>
-                        <button class="edit-btn" onclick="location.href='all products.html'">
+                        <h3 style="color: #111827; font-size: 18px; font-weight: 600; margin: 0 0 8px 0;">No orders yet</h3>
+                        <p style="color: #6b7280; font-size: 14px; margin: 0 0 20px 0;">Start shopping to see your orders here</p>
+                        <button onclick="location.href='all products.html'" style="background: #111827; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-size: 14px;">
                             Browse Products
                             <i data-lucide="arrow-right" size="16"></i>
                         </button>
@@ -195,11 +226,11 @@ class AccountManager {
 
         if (ordersContainer) {
             const ordersHTML = this.currentUser.orders.map(order => `
-                <div class="order-card">
-                    <div class="order-header">
+                <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 20px; margin-bottom: 16px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
                         <div>
-                            <p class="order-id">Order #${order.id}</p>
-                            <p style="font-size: 13px; color: #6b7280; margin: 4px 0 0 0;">
+                            <p style="font-weight: 700; font-size: 16px; color: #111827; margin: 0 0 6px 0;">Order #${order.id}</p>
+                            <p style="font-size: 14px; color: #6b7280; margin: 0;">
                                 ${new Date(order.date).toLocaleDateString('en-GB', {
                                     day: 'numeric',
                                     month: 'long',
@@ -207,24 +238,26 @@ class AccountManager {
                                 })}
                             </p>
                         </div>
-                        <span class="order-status ${order.status.toLowerCase()}">${order.status}</span>
+                        <span style="background: ${order.status.toLowerCase() === 'processing' ? '#fef3c7' : order.status.toLowerCase() === 'delivered' ? '#dcfce7' : '#dbeafe'}; 
+                                     color: ${order.status.toLowerCase() === 'processing' ? '#92400e' : order.status.toLowerCase() === 'delivered' ? '#166534' : '#1e40af'}; 
+                                     padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 600; white-space: nowrap;">
+                            ${order.status}
+                        </span>
                     </div>
-                    <div class="order-items">
+                    <div style="border-top: 1px solid #f3f4f6; padding-top: 16px; margin-bottom: 16px;">
                         ${order.items.map(item => `
-                            <div class="order-item">
-                                <div class="order-item-info">
-                                    <p class="order-item-name">${item.name}</p>
-                                    <p class="order-item-price">Qty: ${item.quantity} × £${item.price}</p>
-                                </div>
+                            <div style="margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #f9fafb;">
+                                <p style="font-weight: 600; font-size: 15px; color: #111827; margin: 0 0 6px 0;">${item.name}</p>
+                                <p style="font-size: 14px; color: #6b7280; margin: 0;">Qty: ${item.quantity} × £${item.price.toFixed(2)}</p>
                             </div>
                         `).join('')}
                     </div>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #f3f4f6; flex-wrap: wrap; gap: 10px;">
-                        <p style="font-weight: 700; font-size: 18px; color: #111827; margin: 0;">
-                            Total: £${order.total}
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 16px; border-top: 1px solid #e5e7eb; flex-wrap: wrap; gap: 12px;">
+                        <p style="font-weight: 700; font-size: 20px; color: #111827; margin: 0;">
+                            Total: £${parseFloat(order.total).toFixed(2)}
                         </p>
-                        <span style="font-size: 12px; color: #6b7280;">
-                            Delivery: ${order.delivery === 'express' ? 'Express (1-2 days)' : 'Standard (5-6 days)'}
+                        <span style="font-size: 13px; color: #6b7280; background: #f9fafb; padding: 6px 12px; border-radius: 6px;">
+                            ${order.delivery === 'express' ? '🚀 Express (1-2 days)' : '📦 Standard (5-6 days)'}
                         </span>
                     </div>
                 </div>
@@ -237,24 +270,29 @@ class AccountManager {
             const recentOrders = this.currentUser.orders.slice(0, 3);
             if (recentOrders.length > 0) {
                 recentOrdersContainer.innerHTML = recentOrders.map(order => `
-                    <div class="order-card">
-                        <div class="order-header">
-                            <div>
-                                <p class="order-id">Order #${order.id}</p>
-                                <p style="font-size: 13px; color: #6b7280; margin: 4px 0 0 0;">
+                    <div style="background: #ffffff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px; margin-bottom: 12px; box-shadow: 0 1px 2px rgba(0,0,0,0.05); transition: all 0.2s;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; gap: 10px;">
+                            <div style="flex: 1;">
+                                <p style="font-weight: 700; font-size: 15px; color: #111827; margin: 0 0 5px 0;">Order #${order.id}</p>
+                                <p style="font-size: 13px; color: #6b7280; margin: 0;">
                                     ${new Date(order.date).toLocaleDateString('en-GB', {
                                         day: 'numeric',
-                                        month: 'short'
+                                        month: 'short',
+                                        year: 'numeric'
                                     })}
                                 </p>
                             </div>
-                            <span class="order-status ${order.status.toLowerCase()}">${order.status}</span>
+                            <span style="background: ${order.status.toLowerCase() === 'processing' ? '#fef3c7' : order.status.toLowerCase() === 'delivered' ? '#dcfce7' : '#dbeafe'}; 
+                                         color: ${order.status.toLowerCase() === 'processing' ? '#92400e' : order.status.toLowerCase() === 'delivered' ? '#166534' : '#1e40af'}; 
+                                         padding: 5px 11px; border-radius: 6px; font-size: 12px; font-weight: 600; white-space: nowrap;">
+                                ${order.status}
+                            </span>
                         </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px;">
-                            <p style="font-weight: 700; font-size: 16px; color: #111827; margin: 0;">
-                                £${order.total}
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 1px solid #f3f4f6;">
+                            <p style="font-weight: 700; font-size: 18px; color: #111827; margin: 0;">
+                                £${parseFloat(order.total).toFixed(2)}
                             </p>
-                            <p style="font-size: 12px; color: #6b7280; margin: 0;">
+                            <p style="font-size: 13px; color: #6b7280; margin: 0;">
                                 ${order.items.length} item${order.items.length > 1 ? 's' : ''}
                             </p>
                         </div>
@@ -276,7 +314,6 @@ class AccountManager {
         if (!editBtn || !saveBtn || !cancelBtn || !profileView || !profileEditForm) return;
 
         editBtn.addEventListener('click', () => {
-            // Populate form
             const editNameEl = document.getElementById('editName');
             const editEmailEl = document.getElementById('editEmail');
             const editPhoneEl = document.getElementById('editPhone');

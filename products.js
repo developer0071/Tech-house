@@ -38,44 +38,43 @@ const PRODUCTS = {
     returns: '30-day money-back guarantee'
   },
   'heater': {
-    id: 'Heater Super Canada',
+    id: 'heater',
     name: 'Heater Super Canada',
-    category: 'heating',
-    price: 299.99,
-    image: 'https://i.ytimg.com/vi/puDGvKJw_Rw/maxresdefault.jpg',
+    category: 'heater',
+    price: 129.99,
+    image: 'https://i.ebayimg.com/images/g/8HkAAOSwKS9nNGaB/s-l500.jpg',
     additionalimgs: [
-      "https://avatars.mds.yandex.net/i?id=bb578e7d19450cfdcae1f2cb305c7a03915fa7d4-5234690-images-thumbs&n=13",
-      "https://avatars.mds.yandex.net/i?id=1e8d292497a08ebd0f67c3e7d664d62102d24353-10149683-images-thumbs&n=13",
-      "https://avatars.mds.yandex.net/i?id=93eb225701c766601c9a9d839e881b8648ec6b73-13234616-images-thumbs&n=13",
-      "https://avatars.mds.yandex.net/i?id=910a3aa80ceac0b70c3aa6cffddb1132f3ce26c0-5277860-images-thumbs&n=13",
-      "https://avatars.mds.yandex.net/i?id=6840c285bd31b6eae7c1836dfb39e23fb6b1f7f0-12528722-images-thumbs&n=13",
-      "https://avatars.mds.yandex.net/i?id=5b1bb39ae921d66dada922694aafa1b548c22f26-9181220-images-thumbs&n=13"
+      "https://avatars.mds.yandex.net/i?id=7849e0b988013c7d9558127eed68e991520e2b9a-4480926-images-thumbs&n=13",
+      "https://avatars.mds.yandex.net/i?id=8614102f1218fa59d89d3fab9e235e2567760669-16292406-images-thumbs&n=13",
+      "https://avatars.mds.yandex.net/i?id=6efee4e9e9cc5f0bf42f05c2b8b4166c307ec467-4024951-images-thumbs&n=13",
+      "https://avatars.mds.yandex.net/i?id=a772c403c6d6b275dca5deae9c84ec5d44ddc740-16110330-images-thumbs&n=13",
+      "https://avatars.mds.yandex.net/i?id=5f8d7c09d9f2dbc7ac5b284ff8cd0bf83d363ebb-5332940-images-thumbs&n=13",
+      "https://avatars.mds.yandex.net/i?id=623f89798158ebeda09ee2f63d7172666dd02b05-8075965-images-thumbs&n=13"
     ],
     rating: 5,
-    reviews: 512,
-    badge: 'Best Seller',
+    reviews: 312,
+    badge: 'Winter Essential',
     inStock: true,
-    description: 'Professional-grade vacuum cleaner with powerful suction and HEPA filtration. Perfect for all floor types and pet hair removal.',
+    description: 'Compact ceramic heater with adjustable thermostat, perfect for bedrooms and offices. Heats up quickly while staying energy efficient.',
     features: [
-      'Powerful 2000W Motor',
-      'HEPA Filtration System',
-      'Multiple Attachments',
-      'Large Dust Capacity',
-      'Cord Storage System',
-      'Lightweight Design'
+      '2 Heat Settings + Fan Mode',
+      'Adjustable Thermostat',
+      'Tip-over Protection',
+      'Overheat Safety Cut-off',
+      'Silent Night Mode',
+      'Easy-Carry Handle'
     ],
     specifications: {
       'Power': '2000W',
-      'Dust Capacity': '2.5L',
-      'Cord Length': '8m',
-      'Weight': '4.5kg',
+      'Heating Type': 'Ceramic',
+      'Coverage': 'Up to 20m²',
+      'Safety': 'Tip-over & Overheat Protection',
       'Warranty': '2 Years',
-      'Noise Level': '75dB'
+      'Weight': '2.3kg'
     },
     shipping: 'Free delivery on orders over £50',
     returns: '30-day money-back guarantee'
   },
-
   'cleaning-steam-mop': {
     id: 'cleaning-steam-mop',
     name: 'Professional Steam Mop',
@@ -158,14 +157,11 @@ const PRODUCTS = {
     name: 'TowerFan Pro Oscillating',
     category: 'cooling',
     price: 89.99,
-    image: 'https://avatars.mds.yandex.net/i?id=f4b72d2c84344db95843baf720cecf0cb55fca30-12813659-images-thumbs&n=13',
+    image: 'https://avatars.mds.yandex.net/i?id=6f31c30174cd04e7340e41bc57b3801a7068999b-10879773-images-thumbs&n=13',
     additionalimgs: [
-      "https://avatars.mds.yandex.net/i?id=7f6e5d4c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8-images-thumbs&n=13",
-      "https://avatars.mds.yandex.net/i?id=6e5d4c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8e7-images-thumbs&n=13",
-      "https://avatars.mds.yandex.net/i?id=5d4c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8e7d6-images-thumbs&n=13",
-      "https://avatars.mds.yandex.net/i?id=4c3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8e7d6c5-images-thumbs&n=13",
-      "https://avatars.mds.yandex.net/i?id=3b2a1f0e9d8c7b6a5f4e3d2c1b0a9f8e7d6c5b4-images-thumbs&n=13",
-      "https://avatars.mds.yandex.net/i?id=2a1f0e9d8c7b6a5f4e3d2c1b0a9f8e7d6c5b4a3-images-thumbs&n=13"
+      "https://avatars.mds.yandex.net/i?id=28e0397b09b5caed19ebd3e08dfc2bb60ac9316b-5447344-images-thumbs&n=13",
+      "https://avatars.mds.yandex.net/i?id=d253cb1a8eb263eb95ba17aff1e56a59a574f080-9152878-images-thumbs&n=13",
+      "https://avatars.mds.yandex.net/i?id=15771ed1fd5e3397b53463ebcaffe23aa3c11587-3927287-images-thumbs&n=13",
     ],
     rating: 4,
     reviews: 178,
@@ -190,7 +186,113 @@ const PRODUCTS = {
     shipping: 'Currently out of stock',
     returns: '30-day money-back guarantee'
   },
+    'selfcare-hair-dryer': {
+    id: 'selfcare-hair-dryer',
+    name: 'SilkCare Ionic Hair Dryer',
+    category: 'selfcare',
+    price: 79.99,
+    image: 'https://avatars.mds.yandex.net/i?id=fa4332d6ef6cd7a8777ce18e9442828ed45f6372-5310620-images-thumbs&n=13',
+    additionalimgs: [
+      "https://avatars.mds.yandex.net/i?id=8b4a443e9eef703a3f5505bab6a1c4321cca8eb5-5233451-images-thumbs&n=13",
+      "https://avatars.mds.yandex.net/i?id=36586ee9a2570e293ffd1959d2978d70fa786b5f-5383794-images-thumbs&n=13",
+      "https://avatars.mds.yandex.net/i?id=2fc4325fb0c16f36c16728bbcf4fca5de649648d-4143805-images-thumbs&n=13",
+      "https://avatars.mds.yandex.net/i?id=8e03b4b0c052593f1924145c68abc75c4c9b6560-8184763-images-thumbs&n=13",
+      "https://avatars.mds.yandex.net/i?id=b9129e6c9f9f42574ae5eef7b73bbb835a32ce3a-12471733-images-thumbs&n=13",
+      "https://avatars.mds.yandex.net/i?id=36586ee9a2570e293ffd1959d2978d70fa786b5f-5383794-images-thumbs&n=13"
+    ],
+    rating: 5,
+    reviews: 421,
+    badge: 'Selfcare Pick',
+    inStock: true,
+    description: 'Professional ionic hair dryer that reduces frizz, protects hair from heat damage, and delivers salon-level shine at home.',
+    features: [
+      '2200W Professional Motor',
+      'Ionic Anti-Frizz Technology',
+      '3 Heat & 2 Speed Settings',
+      'Cool Shot Button',
+      'Concentrator & Diffuser Included',
+      'Lightweight Ergonomic Design'
+    ],
+    specifications: {
+      'Power': '2200W',
+      'Settings': '3 Heat / 2 Speed',
+      'Cable Length': '2.5m',
+      'Weight': '0.7kg',
+      'Warranty': '2 Years',
+      'Attachments': 'Concentrator, Diffuser'
+    },
+    shipping: 'Free delivery on orders over £50',
+    returns: '30-day money-back guarantee'
+  },
 
+  'selfcare-massager': {
+    id: 'selfcare-massager',
+    name: 'DeepRelax Massage Gun',
+    category: 'selfcare',
+    price: 119.99,
+    image: 'https://avatars.mds.yandex.net/i?id=cc399f904cea86fd4aa8c054bad840b99e1041a2-8218461-images-thumbs&n=13',
+    additionalimgs: [
+      "https://avatars.mds.yandex.net/i?id=8ebef37bad324a61c61a971e78c5e2d5cd3a1dc3-16304034-images-thumbs&n=13",
+      "https://avatars.mds.yandex.net/i?id=3d67da3e7b60b3ad9acaa6f9ce1a8b997602591a-4275079-images-thumbs&n=13",
+      "https://avatars.mds.yandex.net/i?id=24fce64827b091e1fb3ce38a10c226eecad7f5dd-3675407-images-thumbs&n=13"
+    ],
+    rating: 4,
+    reviews: 203,
+    inStock: true,
+    description: 'Portable massage gun designed to relieve muscle tension, improve recovery, and provide at-home spa-level relaxation.',
+    features: [
+      '6 Interchangeable Heads',
+      '20 Speed Levels',
+      'Quiet Brushless Motor',
+      'Up to 6 Hours Battery Life',
+      'LED Display Control',
+      'Carrying Case Included'
+    ],
+    specifications: {
+      'Battery Life': 'Up to 6 hours',
+      'Speed Levels': '20',
+      'Noise Level': '≤45dB',
+      'Charging Time': '3 hours',
+      'Warranty': '1 Year',
+      'Weight': '0.9kg'
+    },
+    shipping: 'Free delivery on orders over £50',
+    returns: '30-day money-back guarantee'
+  },
+  'heater-oil-radiator': {
+    id: 'heater-oil-radiator',
+    name: 'RadiantOil 9-Fin Heater',
+    category: 'heater',
+    price: 159.99,
+    image: 'https://avatars.mds.yandex.net/i?id=e64f20a4b6d79941b8903d3bad271084e725f905ec58bfdc-11499518-images-thumbs&n=13',
+    additionalimgs: [
+      "https://avatars.mds.yandex.net/i?id=a0ec120f9b43d527724445e78acf4c7c-5882600-images-thumbs&n=13",
+      "https://avatars.mds.yandex.net/i?id=4bfa254ad9b0a70ea7f89d30acf1c7e6-5237985-images-thumbs&n=13",
+      "https://avatars.mds.yandex.net/i?id=3c583e6c01c534f05341ce7ac5f5cfab-5882743-images-thumbs&n=13"
+    ],
+    rating: 4,
+    reviews: 98,
+    inStock: true,
+    description: 'Oil-filled radiator heater with 9 fins, perfect for steady, silent heating of medium-sized rooms.',
+    features: [
+      '3 Heat Settings',
+      'Adjustable Thermostat',
+      'Silent Operation',
+      'Built-in Cable Storage',
+      'Smooth Rolling Castors',
+      'Anti-Freeze Function'
+    ],
+    specifications: {
+      'Power': '2200W',
+      'Fins': '9',
+      'Heating Type': 'Oil-Filled Radiator',
+      'Warranty': '2 Years',
+      'Weight': '8.5kg',
+      'Cable Length': '1.8m'
+    },
+    shipping: 'Free delivery on orders over £50',
+    returns: '30-day money-back guarantee'
+  },
   'kitchen-air-fryer': {
     id: 'kitchen-air-fryer',
     name: 'Digital Air Fryer XL',
@@ -342,14 +444,16 @@ const PRODUCTS = {
     },
     shipping: 'Free delivery and installation',
     returns: '14-day return policy'
-  }
+  },
 };
 
 const CATEGORIES = {
   kitchen: 'Kitchen',
   cleaning: 'Cleaning',
   cooling: 'Cooling',
-  laundry: 'Laundry'
+  laundry: 'Laundry',
+  heater: 'Heaters',
+  selfcare: 'Selfcare'
 };
 
 if (typeof module !== 'undefined' && module.exports) {

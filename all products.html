@@ -129,6 +129,8 @@
                 <option value="cleaning">Cleaning</option>
                 <option value="cooling">Cooling</option>
                 <option value="laundry">Laundry</option>
+                <option value="heater">Heaters</option>
+                <option value="selfcare">Selfcare</option>
             </select>
         </div>
 
@@ -303,6 +305,9 @@
             `).join('');
 
             lucide.createIcons();
+            if (typeof filterBySearch === 'function') {
+            filterBySearch();
+    }
         }
 
         function addToCart(id) {
